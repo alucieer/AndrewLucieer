@@ -16,7 +16,7 @@
     "url": "git://github.com/alucieer/AndrewLucieer"
   },
   "dependencies": {
-    "polymer": "Polymer/polymer#1.0.0"
+    "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
     "iron-icons": "polymerelements/iron-icons#^1.0.3",
