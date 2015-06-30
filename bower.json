@@ -16,7 +16,7 @@
     "url": "git://github.com/alucieer/AndrewLucieer"
   },
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#1.0.0"
   },
   "devDependencies": {
     "iron-icons": "polymerelements/iron-icons#^1.0.3",
@@ -24,6 +24,7 @@
     "paper-header-panel": "polymerelements/paper-header-panel#^1.0.2",
     "paper-icon-button": "polymerelements/paper-icon-button#^1.0.2",
     "paper-toolbar": "polymerelements/paper-toolbar#^1.0.2",
+	"paper-material": "polymerelements/paper-material#^1.0.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.5"
   }
 }
