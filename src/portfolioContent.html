@@ -1,0 +1,95 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
+<link rel="import" href="../bower_components/paper-drawer-panel/paper-drawer-panel.html">
+<link rel="import" href="../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+
+<dom-module id="portfolio-content">
+
+	<style>
+		.nav { border-right:1px solid silver;}
+		.nav a { text-decoration:none; font-size:12pt; color:black; padding-left: 10px;}
+		.nav .nav-item { padding:20px 0 0 20px; }
+		.nav .nav-item * { vertical-align: bottom; }
+		paper-toolbar #topBar { 
+		background: linear-gradient(to bottom, rgba(90,90,90,1) 0%,rgba(153,0,0,1) 100%);
+		}
+		#mainContainer { padding:10px; }
+		.nav { background: rgb(207, 207, 166); }
+		paper-material { margin:35px; text-align: center; max-width:350px; }
+		paper-material img { max-width: 325px; }
+	</style>
+
+  <template>
+
+    <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+
+        <paper-toolbar>
+          <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        </paper-toolbar>
+      <div class="nav" drawer>
+        <paper-toolbar>
+		  <h3>Andrew Lucieer</h3>
+        </paper-toolbar>
+		<div class='nav-item'>
+			  <iron-icons class="x-scope iron-icon-0"><svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" class="style-scope iron-icon" style="pointer-events: none; display: inline; width: 24px; height: 24px;"><g class="style-scope iron-icon"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" class="style-scope iron-icon"></path></g></svg>
+			<iron-meta id="meta" type="iconset" class="style-scope iron-icon"></iron-meta>
+			</iron-icons>
+			<a href='../resume.html' id='resume'>Resume</a>
+		</div>
+		<div class='nav-item'>
+			<iron-icons class="x-scope iron-icon-0"><svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" class="style-scope iron-icon" style="pointer-events: none; display: inline; width: 24px; height: 24px;"><g class="style-scope iron-icon"><path d="M2 6H0v5h.01L0 20c0 1.1.9 2 2 2h18v-2H2V6zm20-2h-8l-2-2H6c-1.1 0-1.99.9-1.99 2L4 16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7 15l4.5-6 3.5 4.51 2.5-3.01L21 15H7z" class="style-scope iron-icon"></path></g></svg>
+			<iron-meta id="meta" type="iconset" class="style-scope iron-icon"></iron-meta>
+		  </iron-icons>
+		  <a href='../portfolio.html' id='portfolio'><b>Portfolio</b></a>
+	    </div>
+      </div>
+
+	        <paper-header-panel class="main" main mode="waterfall">
+
+        <!-- Main Toolbar -->
+        <paper-toolbar>
+          <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+		  <h3>Portfolio</h3>
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content">
+          <paper-material elevation="5"><img src='../images/cat4.jpg' /></paper-material>
+          <paper-material elevation="5"><img src='../images/cat4.jpg' /></paper-material>
+          <paper-material elevation="5"><img src='../images/cat4.jpg' /></paper-material>
+          <paper-material elevation="5"><img src='../images/cat4.jpg' /></paper-material>
+          <paper-material elevation="5"><img src='../images/cat4.jpg' /></paper-material>
+          <paper-material elevation="5"><img src='../images/cat4.jpg' /></paper-material>
+          <paper-material elevation="5"><img src='../images/cat4.jpg' /></paper-material>
+        </div>
+
+      </paper-header-panel>
+
+    </paper-drawer-panel>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'portfolio-content'
+
+    });
+
+  </script>
+
+</dom-module>
