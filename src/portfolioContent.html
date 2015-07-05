@@ -12,24 +12,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-drawer-panel/paper-drawer-panel.html">
 <link rel="import" href="../bower_components/paper-header-panel/paper-header-panel.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
 
 <dom-module id="portfolio">
 
 	<style>
-		.nav { border-right:1px solid silver;}
-		.nav a { text-decoration:none; font-size:12pt; color:black; padding-left: 10px;}
-		.nav .nav-item { padding:20px 0 0 20px; }
-		.nav .nav-item * { vertical-align: bottom; }
-		paper-toolbar #topBar { 
-			background: linear-gradient(to bottom, rgba(153, 0, 0, 1) 0%,rgba(186, 51, 51, 1) 93%, rgba(153,0,0,1) 100%);
+		hr {
+		  margin: 20px 0;
+		  border: 0;
+		  border-top: 1px solid #eee;
+		  border-bottom: 1px solid white;
 		}
-		#mainContainer { padding:5%; }
-		.nav { background: rgb(207, 207, 166); }
+
+		nav { border-right: 2px inset #eee; background: white; }
+		nav a { text-decoration:none; font-size:12pt; color:black; padding-left: 10px;}
+		nav .nav-item { padding:20px 0 0 20px; }
+		nav .nav-item * { vertical-align: bottom; }
+
+		main p { font-size: 10pt; }
+		h2{ font-size: 22pt; font-weight: 300; color: gray;}
+		h3 { font-weight:400pt; }
+		h4 { font-weight:500; }
+		li { font-size:11pt; }
+
+		paper-toolbar #topBar { background: rgb(217, 34, 17); }
+		#mainContainer { padding:0 3% 0 3%; background: rgb(248, 248, 248); }
 		paper-material { width:100%; text-align:center; }
-		paper-material img { height:100%; width:100%; }
-		.content section { text-align:center; left:0; right:0; max-width: 800px; }
+		section img { width:100%; border:1px solid #e5e6e9; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+		main section { text-align:center; left:0; right:0; max-width: 800px; }
 	</style>
 
   <template>
@@ -39,7 +49,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-toolbar>
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
         </paper-toolbar>
-      <div class="nav" drawer>
+      <nav class="nav" drawer>
         <paper-toolbar>
 		  <h3>Andrew Lucieer</h3>
         </paper-toolbar>
@@ -55,39 +65,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		  </iron-icons>
 		  <a href='../portfolio.html' id='portfolio'><b>Portfolio</b></a>
 	    </div>
-      </div>
+      </nav>
 
 	        <paper-header-panel class="main" main mode="waterfall">
 
         <!-- Main Toolbar -->
-        <paper-toolbar>
+        <paper-toolbar id='right'>
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
 		  <h3>Portfolio</h3>
         </paper-toolbar>
 
         <!-- Main Content -->
-        <div class="content">
+        <main>
 		  <section>
-				<h3>Cat Project</h3>
-			  <paper-material elevation="5"><img src='../images/HappyCat.jpg' /></paper-material>
+			  <h3>Cat Project</h3>
+			  <img src='../images/HappyCat.jpg' />
 			  <h4>Accomplishments</h4>
 			  <p>Analyzed a stray cat, gathered requirements and rescued said cat. He got a bath and photo afterwards.</p>
 		  </section>
 		  <hr>
 		  <section>
 			  <h3>Cat Project</h3>
-			  <paper-material elevation="5"><img src='../images/HappyCat.jpg' /></paper-material>
+			  <img src='../images/HappyCat.jpg' />
 			  <h4>Accomplishments</h4>
 			  <p>Analyzed a stray cat, gathered requirements and rescued said cat. He got a bath and photo afterwards.</p>
 		  </section>
 		  <hr>
 		  <section>
 			  <h3>Cat Project</h3>
-			  <paper-material elevation="5"><img src='../images/HappyCat.jpg' /></paper-material>
+			  <img src='../images/HappyCat.jpg' />
 			  <h4>Accomplishments</h4>
 			  <p>Analyzed a stray cat, gathered requirements and rescued said cat. He got a bath and photo afterwards.</p>
 		  </section>
-        </div>
+        </main>
 
       </paper-header-panel>
 

@@ -17,15 +17,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="resume">
 
 	<style>
-		.nav { border-right:1px solid silver;}
-		.nav a { text-decoration:none; font-size:12pt; color:black; padding-left: 10px;}
-		.nav .nav-item { padding:20px 0 0 20px; }
-		.nav .nav-item * { vertical-align: bottom; }
-		paper-toolbar #topBar { 
-			background: linear-gradient(to bottom, rgba(153, 0, 0, 1) 0%,rgba(186, 51, 51, 1) 93%, rgba(153,0,0,1) 100%);
+		hr {
+		  margin: 20px 0;
+		  border: 0;
+		  border-top: 1px solid #eee;
+		  border-bottom: 1px solid white;
 		}
-		#mainContainer { padding:10px; }
-		.nav { background: rgb(207, 207, 166); }
+
+		nav { border-right: 2px inset #eee; background: white; }
+		nav a { text-decoration:none; font-size:12pt; color:black; padding-left: 10px;}
+		nav .nav-item { padding:20px 0 0 20px; }
+		nav .nav-item * { vertical-align: bottom; }
+		h2{ font-size: 22pt; font-weight: 300; color: gray;}
+		h3 { }
+		h4 { font-weight:500; }
+		li { font-size:11pt; }
+
+		paper-toolbar #topBar { background: rgb(217, 34, 17); }
+		#mainContainer { padding:0 3% 0 3%; background: rgb(248, 248, 248); }
+		paper-material { width:100%; text-align:center; }
+		section img { width:100%; border:1px solid #e5e6e9; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+		.content section { text-align:center; left:0; right:0; max-width: 800px; }
 	</style>
 
   <template>
@@ -34,7 +46,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-toolbar>
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
         </paper-toolbar>
-      <div class="nav" drawer>
+      <nav class="nav" drawer>
         <paper-toolbar>
 		  <h3>Andrew Lucieer</h3>
         </paper-toolbar>
@@ -50,7 +62,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		  </iron-icons>
 		  <a href='../portfolio.html' id='portfolio'>Portfolio</a>
 	    </div>
-      </div>
+      </nav>
 
       <paper-header-panel class="main" main mode="waterfall">
 
