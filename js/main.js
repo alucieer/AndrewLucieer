@@ -7,7 +7,7 @@ var pageLoad = function() {
 
 //Asynchronously populate main tag with contents
 var loadContent = function(pageName) {
-	$('main').load(pageName + '_ajax.html', function() {
+	$('main').load(pageName + '.html', function() {
 		$('#scrim').click();
 	});
 	
