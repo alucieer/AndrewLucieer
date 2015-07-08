@@ -14,4 +14,3 @@ var loadContent = function(pageName) {
 	
 	return true;
 }
-
