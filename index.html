@@ -17,7 +17,7 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <meta name="mobile-web-app-capable" content="yes">
 
-	  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+	  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
 	  <script src='js/main.js'></script>
 	  <script type='text/javascript'>
@@ -47,7 +47,7 @@
                <header>Andrew Lucieer</header>
             </paper-toolbar>
 
-            <div class='nav-item'>
+            <div class='nav-item' id='resume' onClick="loadContent('resume')" paper-drawer-toggle>
                <iron-icons class="x-scope iron-icon-0">
                   <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" class="style-scope iron-icon" style="pointer-events: none; display: inline; width: 24px; height: 24px;">
                      <g class="style-scope iron-icon">
@@ -56,9 +56,9 @@
                   </svg>
                   <iron-meta id="meta" type="iconset" class="style-scope iron-icon"></iron-meta>
                </iron-icons>
-               <a href='#' id='resume' onClick="loadContent('resume')">Resume</a>
+			   Resume
             </div>
-            <div class='nav-item'>
+            <div class='nav-item' id='portfolio' onClick="loadContent('portfolio')" paper-drawer-toggle>
                <iron-icons class="x-scope iron-icon-0">
                   <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" class="style-scope iron-icon" style="pointer-events: none; display: inline; width: 24px; height: 24px;">
                      <g class="style-scope iron-icon">
@@ -67,9 +67,9 @@
                   </svg>
                   <iron-meta id="meta" type="iconset" class="style-scope iron-icon"></iron-meta>
                </iron-icons>
-               <a href='#' id='portfolio' onClick="loadContent('portfolio')">Portfolio</a>
+			   Portfolio
             </div>
-            <div class='nav-item'>
+            <div class='nav-item' id='log' onClick="loadContent('log')" paper-drawer-toggle>
                <iron-icons class="x-scope iron-icon-0">
                   <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" class="style-scope iron-icon" style="pointer-events: none; display: inline; width: 24px; height: 24px;">
                      <g class="style-scope iron-icon">
@@ -78,7 +78,7 @@
                   </svg>
                   <iron-meta id="meta" type="iconset" class="style-scope iron-icon"></iron-meta>
                </iron-icons>
-               <a href='#' id='log' onClick="loadContent('log')">Log</a>
+			   Log
             </div>
          </nav>
 

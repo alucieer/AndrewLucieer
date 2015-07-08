@@ -15,18 +15,14 @@ header {
 nav {
 	background:white;
 }
-nav a {
-	text-decoration:none;
-	font-size:12pt;
-	color:black;
-	padding-left:10px;
-}
 nav .nav-item {
-	padding:20px 0 0 20px;
+	padding:10px 0 10px 20px;
 }
 nav .nav-item * {
 	vertical-align:bottom;
 }
+nav .nav-item:hover { cursor: pointer; }
+
 main p {
 	font-size:10pt;
 }
@@ -87,7 +83,7 @@ body#log { text-align: center !important; }
 #log li {
 	list-style:none;
 	border-bottom:1px solid #eee;
-	margin:25px 25% 5px 25%;
+	margin:25px 10% 5px 10%;
 }
 #log ul {
 	font-size:16pt;
