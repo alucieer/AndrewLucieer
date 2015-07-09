@@ -62,8 +62,10 @@ paper-material {
 }
 section img {
 	width:100%;
-	border:1px solid #e5e6e9;
-	box-shadow:0 0 30px rgba(0,0,0,0.5);
+
+	-webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 section p {
 	text-align:left;
@@ -83,22 +85,28 @@ body#log { text-align: center !important; }
 #log li {
 	list-style:none;
 	border-bottom:1px solid #eee;
-	margin:25px 10% 5px 10%;
+	margin:25px 0 5px 0;
 }
 #log ul {
 	font-size:16pt;
 	font-weight:300;
 }
-#avatar {
-	border:5px solid red;
-	border-radius:10px;
-	text-align:center;
-	display:block;
-	margin:50px auto 0 auto;
+
+.avatar {
+	width:250px;
+	margin:1em 1em 1em 20%;
+    position: relative;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
-#avatar, #avatar img {width:200px; height:200px; }
 .timePosted {
-	width:100px;
+	width:71;
 	text-align:left;
 	color:gray;
 	display:table-cell;
