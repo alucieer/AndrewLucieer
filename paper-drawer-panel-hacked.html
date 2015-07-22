@@ -491,9 +491,8 @@ To change the drawer container when it's in the right side:
         var isTargetToggleElement = targetElement &&
           this.drawerToggleAttribute &&
           targetElement.hasAttribute(this.drawerToggleAttribute);
-
         if (isTargetToggleElement) {
-			if ("nav-item" == targetElement.className)
+			if (targetElement.parentElement.nodeName.toLowerCase() == "nav")
 				loadContent(targetElement.id);
 			this.togglePanel();
         }
