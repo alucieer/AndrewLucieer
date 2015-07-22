@@ -15,14 +15,15 @@ header {
 nav {
 	background:white;
 }
-nav .nav-item {
+nav div {
 	padding:10px 0 10px 20px;
 }
-nav .nav-item * {
+nav div * {
 	vertical-align:bottom;
 }
-nav .nav-item:hover { cursor: pointer; }
+nav div:hover { cursor: pointer; }
 
+nav .active { background:#eceff1; }
 main p {
 	font-size:10pt;
 }
@@ -47,12 +48,14 @@ header {
 	font-size:14pt;
 	font-weight:300;
 }
-paper-toolbar #topBar {
+paper-toolbar.paper-toolbar-0 {
 	background:rgb(217,34,17);
 	border-left:2px outset rgba(181,32,32,.5);
 }
-#mainContainer {
-	padding:0 3% 0 3%;
+
+#mainContainer { padding:0; }
+main {
+	padding:.5% 3% .5% 3%;
 	background:rgb(248,248,248);
 	border-left:2px solid #eee;
 }
