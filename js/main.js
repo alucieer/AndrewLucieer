@@ -1,4 +1,4 @@
-var _defaultPage = 'portfolio';
+var _defaultPage = 'about';
 
 var pageLoad = function() {
 	loadContent(_defaultPage);
@@ -7,11 +7,12 @@ var pageLoad = function() {
 //Asynchronously populate main tag with contents
 var loadContent = function(pageName) {
 	//Asynchronously load content into main tag
-	$('main').load(pageName + '.html');
-	//load(pageName + '.html', document.querySelector('main'));
+	//$('main').load(pageName + '.html');
+	load(pageName + '.html', document.querySelector('main'));
 
-	//Set page name in header
+	//Set page name
 	document.querySelector('header#right').innerHTML = pageName;
+	document.querySelector('main').id = pageName;
 
 	//Toggle active menu background:
 	var activeNavItem = document.querySelector('.active');
