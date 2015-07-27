@@ -12,9 +12,6 @@ hr {
 header {
 	text-transform:capitalize;
 }
-nav {
-	background:white;
-}
 nav div {
 	padding:10px 0 10px 20px;
 }
@@ -41,6 +38,11 @@ h4 {
 	margin:20px 0 5px;
 	text-align:left;
 }
+article {
+	font-size:13pt;
+	font-weight:300;
+	margin:0;
+}
 li {
 	font-size:11pt;
 }
@@ -52,8 +54,9 @@ paper-toolbar.paper-toolbar-0 {
 	background:rgb(217,34,17);
 	border-left:2px outset rgba(181,32,32,.5);
 }
-
-#mainContainer { padding:0; }
+#mainContainer {
+	padding:0;
+}
 main {
 	padding:.5% 3% .5% 3%;
 	background:rgb(248,248,248);
@@ -65,7 +68,6 @@ paper-material {
 }
 section img {
 	width:100%;
-
 	-webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
@@ -82,47 +84,28 @@ main section {
 	right:0;
 	max-width:800px;
 }
-
-<!-- Log Styles -->
-body#log { text-align: center !important; }
-#log li {
-	list-style:none;
-	border-bottom:1px solid #eee;
-	margin:25px 0 5px 0;
-}
-#log ul {
-	font-size:16pt;
-	font-weight:300;
-	margin-left:-42px;
-}
-#logContainer { 
+.avatarContainer { 
 	text-align:center;
 }
 .avatar {
 	width:75%;
-	max-width:250px;
+	max-width:175px;
 	margin:2em 0 2em 0;
     position: relative;
-
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-
     -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
     -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
     box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
-.timePosted {
-	width:71px;
-	text-align:left;
-	color:gray;
-	display:table-cell;
-	font-size:12pt;
-	vertical-align:top;
+#about li {
+	list-style: none;
+	padding-bottom: 4px;
 }
-.tweet {
-	display:table-cell;
-	text-align:left;
-	padding: 0 0 30px 20px;
-	font-size:11pt;
+
+#about ul div {
+	display: inline;
 }
+#about a { vertical-align: top; }
+#about h2 { margin: 0 0 8px 0; }
