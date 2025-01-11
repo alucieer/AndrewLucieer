@@ -1,0 +1,55 @@
+header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    padding: 5px 30px;
+    line-height: 62px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px);
+
+    &.header-shadow {
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    }
+}
+
+nav#top-nav {
+    display: flex;
+    justify-content: end;
+    gap: 1.5em;
+
+    a {
+        color: black;
+        font-size: 1em;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &.active {
+            color: #cd1635;
+        }
+    }
+}
+
+::ng-deep .mat-mdc-menu-panel.mobile-nav-menu {
+    a.active .mat-mdc-menu-item-text {
+        color: #cd1635;
+        font-weight: 500;
+    }
+}
+
+main {
+    max-width: 1400px;
+    margin: 72px auto 0 auto;
+    min-height: calc(100vh - 100px);
+    padding: 30px;
+}

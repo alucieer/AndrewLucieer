@@ -1,0 +1,146 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+    use-system-variables: true,
+    system-variables-prefix: md-sys-color,
+  ));
+}/* You can add global styles to this file, and also import other style files */
+
+.mat-icon {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings:
+    'FILL' 0, 
+    'wght' 400, 
+    'GRAD' 0, 
+    'opsz' 48;
+}
+
+/** Template:
+https://dribbble.com/shots/11199542-Neteor-Web-Designer-Portfolio-HTML5/attachments/2805050?mode=media
+**/
+
+//Generated from #db2e3a using https://material-foundation.github.io/material-theme-builder/
+//https://www.youtube.com/watch?v=rLtF6MzTRA0&t=2s
+//https://stackoverflow.com/questions/62549139/it-is-possible-change-angular-material-mat-slide-toggle-icon
+.light-mode {
+  --md-sys-color-primary: rgb(144 74 72);
+  --md-sys-color-surface-tint: rgb(144 74 72);
+  --md-sys-color-on-primary: rgb(255 255 255);
+  --md-sys-color-primary-container: rgb(255 218 216);
+  --md-sys-color-on-primary-container: rgb(59 8 10);
+  --md-sys-color-secondary: rgb(119 86 85);
+  --md-sys-color-on-secondary: rgb(255 255 255);
+  --md-sys-color-secondary-container: rgb(255 218 216);
+  --md-sys-color-on-secondary-container: rgb(44 21 20);
+  --md-sys-color-tertiary: rgb(115 90 46);
+  --md-sys-color-on-tertiary: rgb(255 255 255);
+  --md-sys-color-tertiary-container: rgb(255 222 169);
+  --md-sys-color-on-tertiary-container: rgb(39 25 0);
+  --md-sys-color-error: rgb(186 26 26);
+  --md-sys-color-on-error: rgb(255 255 255);
+  --md-sys-color-error-container: rgb(255 218 214);
+  --md-sys-color-on-error-container: rgb(65 0 2);
+  --md-sys-color-background: rgb(255 248 247);
+  --md-sys-color-on-background: rgb(35 25 25);
+  --md-sys-color-surface: rgb(255 248 247);
+  --md-sys-color-on-surface: rgb(35 25 25);
+  --md-sys-color-surface-variant: rgb(244 221 220);
+  --md-sys-color-on-surface-variant: rgb(83 67 66);
+  --md-sys-color-outline: rgb(133 115 114);
+  --md-sys-color-outline-variant: rgb(215 193 192);
+  --md-sys-color-shadow: rgb(0 0 0);
+  --md-sys-color-scrim: rgb(0 0 0);
+  --md-sys-color-inverse-surface: rgb(56 46 45);
+  --md-sys-color-inverse-on-surface: rgb(255 237 235);
+  --md-sys-color-inverse-primary: rgb(255 179 176);
+  --md-sys-color-primary-fixed: rgb(255 218 216);
+  --md-sys-color-on-primary-fixed: rgb(59 8 10);
+  --md-sys-color-primary-fixed-dim: rgb(255 179 176);
+  --md-sys-color-on-primary-fixed-variant: rgb(115 51 50);
+  --md-sys-color-secondary-fixed: rgb(255 218 216);
+  --md-sys-color-on-secondary-fixed: rgb(44 21 20);
+  --md-sys-color-secondary-fixed-dim: rgb(231 189 186);
+  --md-sys-color-on-secondary-fixed-variant: rgb(93 63 62);
+  --md-sys-color-tertiary-fixed: rgb(255 222 169);
+  --md-sys-color-on-tertiary-fixed: rgb(39 25 0);
+  --md-sys-color-tertiary-fixed-dim: rgb(227 194 140);
+  --md-sys-color-on-tertiary-fixed-variant: rgb(90 67 25);
+  --md-sys-color-surface-dim: rgb(232 214 213);
+  --md-sys-color-surface-bright: rgb(255 248 247);
+  --md-sys-color-surface-container-lowest: rgb(255 255 255);
+  --md-sys-color-surface-container-low: rgb(255 240 239);
+  --md-sys-color-surface-container: rgb(252 234 232);
+  --md-sys-color-surface-container-high: rgb(246 228 227);
+  --md-sys-color-surface-container-highest: rgb(240 222 221);
+}
+
+//Generated from #db2e3a using https://material-foundation.github.io/material-theme-builder/
+.dark-mode {
+  --md-sys-color-primary: rgb(255 179 176);
+  --md-sys-color-surface-tint: rgb(255 179 176);
+  --md-sys-color-on-primary: rgb(87 29 29);
+  --md-sys-color-primary-container: rgb(115 51 50);
+  --md-sys-color-on-primary-container: rgb(255 218 216);
+  --md-sys-color-secondary: rgb(231 189 186);
+  --md-sys-color-on-secondary: rgb(68 41 40);
+  --md-sys-color-secondary-container: rgb(93 63 62);
+  --md-sys-color-on-secondary-container: rgb(255 218 216);
+  --md-sys-color-tertiary: rgb(227 194 140);
+  --md-sys-color-on-tertiary: rgb(65 45 5);
+  --md-sys-color-tertiary-container: rgb(90 67 25);
+  --md-sys-color-on-tertiary-container: rgb(255 222 169);
+  --md-sys-color-error: rgb(255 180 171);
+  --md-sys-color-on-error: rgb(105 0 5);
+  --md-sys-color-error-container: rgb(147 0 10);
+  --md-sys-color-on-error-container: rgb(255 218 214);
+  --md-sys-color-background: rgb(26 17 17);
+  --md-sys-color-on-background: rgb(240 222 221);
+  --md-sys-color-surface: rgb(26 17 17);
+  --md-sys-color-on-surface: rgb(240 222 221);
+  --md-sys-color-surface-variant: rgb(83 67 66);
+  --md-sys-color-on-surface-variant: rgb(215 193 192);
+  --md-sys-color-outline: rgb(160 140 139);
+  --md-sys-color-outline-variant: rgb(83 67 66);
+  --md-sys-color-shadow: rgb(0 0 0);
+  --md-sys-color-scrim: rgb(0 0 0);
+  --md-sys-color-inverse-surface: rgb(240 222 221);
+  --md-sys-color-inverse-on-surface: rgb(56 46 45);
+  --md-sys-color-inverse-primary: rgb(144 74 72);
+  --md-sys-color-primary-fixed: rgb(255 218 216);
+  --md-sys-color-on-primary-fixed: rgb(59 8 10);
+  --md-sys-color-primary-fixed-dim: rgb(255 179 176);
+  --md-sys-color-on-primary-fixed-variant: rgb(115 51 50);
+  --md-sys-color-secondary-fixed: rgb(255 218 216);
+  --md-sys-color-on-secondary-fixed: rgb(44 21 20);
+  --md-sys-color-secondary-fixed-dim: rgb(231 189 186);
+  --md-sys-color-on-secondary-fixed-variant: rgb(93 63 62);
+  --md-sys-color-tertiary-fixed: rgb(255 222 169);
+  --md-sys-color-on-tertiary-fixed: rgb(39 25 0);
+  --md-sys-color-tertiary-fixed-dim: rgb(227 194 140);
+  --md-sys-color-on-tertiary-fixed-variant: rgb(90 67 25);
+  --md-sys-color-surface-dim: rgb(26 17 17);
+  --md-sys-color-surface-bright: rgb(66 55 54);
+  --md-sys-color-surface-container-lowest: rgb(20 12 12);
+  --md-sys-color-surface-container-low: rgb(35 25 25);
+  --md-sys-color-surface-container: rgb(39 29 29);
+  --md-sys-color-surface-container-high: rgb(50 40 39);
+  --md-sys-color-surface-container-highest: rgb(61 50 50);
+}
+
+html, body { height: 100%; }
+body { 
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background: var(--md-sys-color-on-primary);
+}

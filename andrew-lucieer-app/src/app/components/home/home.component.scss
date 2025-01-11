@@ -1,0 +1,55 @@
+::ng-deep main.main {
+    max-width: unset;
+    padding: 0;
+}
+
+#avatar {
+    width: 100%;
+}
+
+#home-body {
+    max-width: 1260px;
+    margin: 30px auto 0 auto;
+    padding: 30px;
+}
+
+#quote-container {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 38.5vw;
+    position: absolute;
+    top: 102px;
+    right: 0;
+    width: calc(100vw - 44%);
+    margin: 0 4em 0 0;
+    //background: #363636;
+
+    color: white;
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    #random-quote {
+        display: inline;
+        font-size: 2.5vw;
+        font-style: italic;
+        line-height: 1.5em;
+    }
+
+    #author {
+        display: block;
+        text-align: right;
+        font-size: 1.75vw;
+        line-height: 2em;
+        margin: 1.5em 0 0 0;
+    }
+
+    .quote-symbol {
+        font-size: 4vw;
+        display: inline;
+    }
+}

@@ -1,0 +1,52 @@
+<!-- https://dribbble.com/shots/11199542-Neteor-Web-Designer-Portfolio-HTML5 -->
+<header [ngClass]="{'header-shadow': showHeaderShadow}">
+  <span>
+    <div>Logo</div>
+    <!--<app-theme-mode-toggle></app-theme-mode-toggle>-->
+  </span>
+
+  <!-- Desktop Nav -->
+  <nav id="top-nav" *ngIf="!isSmallScreen">
+    <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+    <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
+    <a routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Services</a>
+    <a routerLink="/portfolio" routerLinkActive="active" ariaCurrentWhenActive="page">Portfolio</a>
+    <a routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page">Blog</a>
+    <a (click)="openContactDialog()">Contact</a>
+  </nav>
+
+  <!-- Mobile Nav Menu -->
+  <button mat-icon-button *ngIf="isSmallScreen"
+          [matMenuTriggerFor]="menu" 
+          aria-label="Example icon-button with a menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" class="mobile-nav-menu">
+    <a mat-menu-item routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
+      Home
+    </a>
+    <a mat-menu-item routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
+      About
+    </a>
+    <a mat-menu-item routerLinkActive="/services"  routerLinkActive="active" ariaCurrentWhenActive="page">
+      Services
+    </a>
+    <a mat-menu-item routerLink="/portfolio" routerLinkActive="active" ariaCurrentWhenActive="page">
+      Portfolio
+    </a>
+    <a mat-menu-item routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page">
+      Blog
+    </a>
+    <a mat-menu-item (click)="openContactDialog()" ariaCurrentWhenActive="page">
+      Contact
+    </a>
+  </mat-menu>
+
+</header>
+<main class="main">
+  <router-outlet />
+  <nav id="side-nav-social">
+    <div>IG</div>
+    <div>in</div>
+  </nav>
+</main>
