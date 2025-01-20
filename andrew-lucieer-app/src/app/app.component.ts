@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Component, Inject, inject, OnDestroy, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ThemeModeToggleComponent } from './theme-mode-toggle/theme-mode-toggle.component';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -8,6 +8,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactDialogComponent } from './components/contact-dialog/contact-dialog.component';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { DialogService } from './services/dialolg/dialog.service';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +22,7 @@ import { ContactDialogComponent } from './components/contact-dialog/contact-dial
     MatIconModule,
     MatMenuModule,
     //ThemeModeToggleComponent
+    
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -28,8 +32,13 @@ export class AppComponent implements OnInit {
   showHeaderShadow: boolean = false;
   isSmallScreen: boolean = false;
   readonly dialog = inject(MatDialog);
+  routerSubscription: Subscription;
+  activeRouteURL: string;
 
-  constructor(breakpointObserver: BreakpointObserver) {
+  constructor(breakpointObserver: BreakpointObserver, 
+    public dialogService: DialogService,
+    private router: Router,
+    @Inject(DOCUMENT) private document: Document) {
     breakpointObserver.observe([
       Breakpoints.Handset
     ]).subscribe(result => {
@@ -38,9 +47,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
     window.addEventListener('scroll', this.scrollEvent, true);
-
+    this.routerSubscription = this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.activeRouteURL = event.url.substring(1, event.url.length);
+      }
+    });
+    
+    this.dialogService.isDialogOpen$.subscribe(value => {
+    //Set theme mode
+    this.document.body.classList.toggle('dialog-open');
+    });
   }
 
 /*  ngOnDestroy() {
@@ -62,7 +79,7 @@ export class AppComponent implements OnInit {
 
   openContactDialog(): void {
     this.dialog.open(ContactDialogComponent);
-    const dialogRef = this.dialog.open(ContactDialogComponent, {restoreFocus: false});
+    //const dialogRef = this.dialog.open(ContactDialogComponent, {restoreFocus: false});
     //dialogRef.afterClosed().subscribe(() => this.menuTrigger().focus());
   }
 }

@@ -1,4 +1,4 @@
-::ng-deep main.main {
+::ng-deep main#page-home {
     max-width: unset;
     padding: 0;
 }
@@ -51,5 +51,30 @@
     .quote-symbol {
         font-size: 4vw;
         display: inline;
+    } 
+}
+
+h1 {
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+h3 {
+    margin-bottom: 7px;
+}
+
+ul {
+    margin-block-start: 0.5em;
+    li {
+        margin-bottom: 5px;
+        font-size: 17px;
+        font-weight:500;
     }
 }
+
+::ng-deep .about-me-card  {
+    white-space: wrap;
+    padding: 20px;
+    font-size: 18px;
+}  

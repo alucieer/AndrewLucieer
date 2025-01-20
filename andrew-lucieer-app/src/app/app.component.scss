@@ -1,3 +1,12 @@
+::ng-deep body {
+    height: unset;
+    background: rgb(237 237 237);
+
+    &.dialog-open {
+        overflow-y: hidden;
+    }
+}
+
 header {
     position: fixed;
     z-index: 1;
@@ -50,6 +59,18 @@ nav#top-nav {
 main {
     max-width: 1400px;
     margin: 72px auto 0 auto;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 132px);
     padding: 30px;
+}
+
+//Scroll animations (https://scroll-driven-animations.style/ https://www.youtube.com/watch?v=rpCQEQAlMIE):
+
+#side-nav-social {
+    display: none;
+    position: fixed;
+    right: 0;
+    background: black;
+    border-radius: 8px;
+    padding: 30px;
+    width: 50px;
 }

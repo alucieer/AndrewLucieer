@@ -1,3 +1,10 @@
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function onSubmit(token) {
+      document.getElementById("contact-form").submit();
+    }
+</script>
+
 <header>
     <h3 mat-dialog-title>Contact Me</h3>
     <button mat-icon-button mat-dialog-close>
@@ -6,11 +13,43 @@
 </header>
 
 <mat-dialog-content>
-    <mat-form-field appearance="outline">
-        <mat-label>Input</mat-label>
-        <input matInput>
-    </mat-form-field>
+    <form [formGroup]="contactForm"
+          id="contact-form" 
+          (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput 
+                   formControlName="name"
+                   cdkFocusInitial
+                   required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput 
+                   type='email' 
+                   formControlName="email" 
+                   required />
+            <mat-error>
+                Please enter a valid email address
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Message</mat-label>
+            <textarea matInput
+                      formControlName="message"
+                      required
+                      rows="5"></textarea>
+        </mat-form-field>
+    </form>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-flat-button mat-dialog-close>Send</button>
+  <button mat-flat-button 
+    type="submit" 
+    mat-dialog-close 
+    [disabled]="!formIsValid()"
+    data-sitekey="reCAPTCHA_site_key" 
+    data-callback='onSubmit' 
+    data-action='submit'>Send</button>
 </mat-dialog-actions>

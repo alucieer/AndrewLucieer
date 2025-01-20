@@ -1,0 +1,18 @@
+h2 {
+    margin-top: 0;
+}
+
+mat-card {
+    width: fit-content;
+}
+
+mat-card-content {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    margin:0 auto 0 auto;
+}

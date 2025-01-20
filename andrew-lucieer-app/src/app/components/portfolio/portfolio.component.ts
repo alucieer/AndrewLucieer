@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { PortfolioImageComponent } from '../portfolio-image/portfolio-image.component';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-portfolio',
-  imports: [],
+  imports: [PortfolioImageComponent, MatCardModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
