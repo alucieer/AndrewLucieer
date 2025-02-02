@@ -1,6 +1,6 @@
 ::ng-deep main#page-home {
     max-width: unset;
-    padding: 0;
+    padding: 1px 0 30px 0;
 }
 
 #avatar {
@@ -15,20 +15,19 @@
 }
 
 #quote-container {
-    text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 38.5vw;
+    height: 38.9vw;
     position: absolute;
-    top: 102px;
-    right: 0;
-    width: calc(100vw - 44%);
-    margin: 0 4em 0 0;
-    //background: #363636;
+    top: 73px;
+    left: 40%;
+    width: calc(100vw - 45%);
+    color: #fafafa;
+    font-weight: 400;
+    //background: gray;
 
     color: white;
-    font-family: "Open Sans", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -36,15 +35,14 @@
 
     #random-quote {
         display: inline;
-        font-size: 2.5vw;
+        font-size: 2.5em;
         font-style: italic;
         line-height: 1.5em;
     }
 
     #author {
         display: block;
-        text-align: right;
-        font-size: 1.75vw;
+        font-size: 1.75em;
         line-height: 2em;
         margin: 1.5em 0 0 0;
     }
@@ -55,27 +53,42 @@
     } 
 }
 
-h1 {
-    margin-left: 10px;
-    font-weight: 600;
-    font-size: 28px;
+mat-card-content {
+    //font-size: 0.9em;
+
 }
 
-h3 {
-    margin-bottom: 7px;
+h1 {
+    margin-left: 10px;
 }
 
 ul {
-    margin-block-start: 0.5em;
+    margin-block-start: 0.1em;
+    padding-left: 25px;
+    list-style-type: circle;
+
     li {
         margin-bottom: 5px;
-        font-size: 17px;
+        font-size: 0.95em;
         font-weight:500;
     }
 }
 
-::ng-deep .about-me-card  {
+::ng-deep #about-me-card  {
     white-space: wrap;
     padding: 20px;
-    font-size: 18px;
+    font-size: 1.5em;
+    color: rgb(53 52 55);
 }  
+
+::ng-deep #skills-responsabilities-card {
+    white-space: wrap;
+    padding: 20px;
+    font-size: 1.5em;
+    color: rgb(53 52 55);
+
+    background: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.9)), url("https://drsarahmckay.com/wp-content/uploads/2013/09/brain-2062057_1920-768x585.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+}

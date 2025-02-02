@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    window.addEventListener('scroll', this.scrollEvent, true);
+    //window.addEventListener('scroll', this.scrollEvent, true);
     this.routerSubscription = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.activeRouteURL = event.url.substring(1, event.url.length);
@@ -68,14 +68,14 @@ export class AppComponent implements OnInit {
 
    
 
-  scrollEvent = (event:any): void => {
+  /*scrollEvent = (event:any): void => {
     const scrollTopVal = event.target.scrollingElement.scrollTop;
     if (scrollTopVal > 1) {
       this.showHeaderShadow = true;
     } else {
       this.showHeaderShadow = false;
     }
-  }
+  }*/
 
   openContactDialog(): void {
     this.dialog.open(ContactDialogComponent);

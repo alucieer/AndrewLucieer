@@ -7,25 +7,82 @@
     }
 }
 
-header {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    width: 100%;
-    padding: 5px 30px;
-    line-height: 62px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(10px);
+/** Shrinking Header Liberated from 
+https://scroll-driven-animations.style/demos/shrinking-header-shadow/css/ **/
 
-    &.header-shadow {
-        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+@keyframes adjust-header {
+    to { 
+        box-shadow: 0 5px 5px -3px rgba(0,0,0,.26);
+        line-height: 62px;
     }
 }
+
+@keyframes move-and-fade-background {
+	to {
+		translate: 0% -5%;
+		scale: 1.0;
+		opacity: 0;
+	}
+}
+
+@keyframes logo-adjust {
+    to {
+        font-size: 2rem;
+        //scale: 0.3;
+    }
+}
+
+
+//Styles for Scroll Event
+@supports (animation-timeline: scroll()) {
+    header {
+        animation: adjust-header linear both;
+        position: fixed;
+        z-index: 1;
+        top:0;
+        width: 100%;
+        line-height: 100px;
+        padding: 5px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        background: rgb(255, 255, 255);
+        /*background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);*/
+
+        .header-bg  {
+            opacity: 0.2;
+            animation: move-and-fade-background linear both;
+            position: absolute;
+            inset: 0;
+            top: auto;
+            height: 13rem;
+            //background: linear-gradient(to bottom, #fff6 0%, #fff 80%), url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/vecteezy_cityscape-modern-flat-line-landscape-vector-city-landscape_6619652-2.jpg) repeat-x 50% 100% / 650px auto;
+            background: url('https://cdn.vectorstock.com/i/1000v/75/77/electronic-circuit-board-vector-51987577.jpg');
+            z-index: -1;
+            //opacity:0.9;
+        }
+
+        .info {
+            animation: adjust-info linear both;
+        }
+        #logo {
+            font-size: 3rem;
+            text-decoration: none;
+            animation: logo-adjust linear both;   
+        }
+
+
+    }
+    header, #logo, .header-bg {
+        animation-timeline: scroll() !important;
+        animation-range: 0 150px !important;
+    }
+}
+
+
 
 nav#top-nav {
     display: flex;
@@ -34,7 +91,7 @@ nav#top-nav {
 
     a {
         color: black;
-        font-size: 1em;
+        font-size: 1.50em;
         font-weight: 500;
         text-decoration: none;
         cursor: pointer;
@@ -58,9 +115,9 @@ nav#top-nav {
 
 main {
     max-width: 1400px;
-    margin: 72px auto 0 auto;
+    margin: 110px auto 0 auto;
     min-height: calc(100vh - 132px);
-    padding: 30px;
+    padding: 60px 30px 30px 30px;
 }
 
 //Scroll animations (https://scroll-driven-animations.style/ https://www.youtube.com/watch?v=rpCQEQAlMIE):

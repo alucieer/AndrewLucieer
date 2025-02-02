@@ -1,17 +1,17 @@
 <!-- https://dribbble.com/shots/11199542-Neteor-Web-Designer-Portfolio-HTML5 -->
 <header [ngClass]="{'header-shadow': showHeaderShadow}">
-  <span>
-    <b>Logo</b>
-    <!--<app-theme-mode-toggle></app-theme-mode-toggle>-->
-  </span>
-
+  <div class="header-bg"></div>
+  <a href="/home" id="logo">
+    Logo
+  </a>
+<!--<app-theme-mode-toggle></app-theme-mode-toggle>-->
   <!-- Desktop Nav -->
   <nav id="top-nav" *ngIf="!isSmallScreen" role="navigation">
     <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
     <!--<a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>-->
-    <a routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Services</a>
+    <!--<a routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Services</a>-->
     <a routerLink="/portfolio" routerLinkActive="active" ariaCurrentWhenActive="page">Portfolio</a>
-    <a routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page">Blog</a>
+    <!--<a routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page">Blog</a>-->
     <a (click)="openContactDialog()">Contact</a>
   </nav>
 

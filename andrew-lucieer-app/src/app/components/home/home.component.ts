@@ -12,7 +12,8 @@ export class HomeComponent {
     { quote: "People ignore design that ignores people.", author: "Frank Chimero" },
     { quote: "Design creates culture. Culture shapes values. Values determine the future.", author: "Robert L. Peters" },
     { quote: "Stay hungry, stay foolish", author: "Steve Jobs" },
-    { quote: "Never use a long word where a short one will do.", author: "George Orwell" }
+    { quote: "Never use a long word where a short one will do.", author: "George Orwell" },
+    { quote: "A delayed game is eventually good, but a rushed game is forever bad.", author: "Shigeru Miyamoto" }
   ];
   
   randomQuote: Quote;
