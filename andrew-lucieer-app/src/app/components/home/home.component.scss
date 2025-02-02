@@ -20,7 +20,7 @@
     justify-content: center;
     height: 38.9vw;
     position: absolute;
-    top: 73px;
+    top: 111px;
     left: 40%;
     width: calc(100vw - 45%);
     color: #fafafa;
@@ -35,21 +35,22 @@
 
     #random-quote {
         display: inline;
-        font-size: 2.5em;
+        font-size: 1.75rem;
         font-style: italic;
-        line-height: 1.5em;
+        line-height: 1.75rem;
     }
 
     #author {
         display: block;
-        font-size: 1.75em;
-        line-height: 2em;
-        margin: 1.5em 0 0 0;
+        font-size: 1.75rem;
+        line-height: 1.75rem;
+        margin: 1.75rem 0 0 0;
     }
 
     .quote-symbol {
-        font-size: 4vw;
+        font-size: 1.75rem;
         display: inline;
+        font-weight: 600;
     } 
 }
 
@@ -69,26 +70,34 @@ ul {
 
     li {
         margin-bottom: 5px;
-        font-size: 0.95em;
-        font-weight:500;
+        //font-size: 1.25em;
+        font-weight:400;
     }
 }
 
 ::ng-deep #about-me-card  {
     white-space: wrap;
-    padding: 20px;
-    font-size: 1.5em;
+    //padding: 20px;
+    //font-size: 1.5em;
     color: rgb(53 52 55);
 }  
 
-::ng-deep #skills-responsabilities-card {
+::ng-deep #skills-responsibilities-card {
     white-space: wrap;
-    padding: 20px;
-    font-size: 1.5em;
+    //font-size: 1.5em;
     color: rgb(53 52 55);
 
     background: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.9)), url("https://drsarahmckay.com/wp-content/uploads/2013/09/brain-2062057_1920-768x585.jpg");
     background-repeat: no-repeat;
     background-position-x: center;
-    background-position-y: bottom;
+    background-position-y: top;
+
+    section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        //justify-content: center;
+
+        gap: 1rem;
+    }
 }

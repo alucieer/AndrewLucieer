@@ -28,14 +28,20 @@ html {
 
 body {
   //Field:
-  --mat-form-field-outlined-label-text-populated-size: 24px;
+  --mat-form-field-outlined-label-text-populated-size: 1.75rem;
   --mdc-outlined-text-field-label-text-weight: 500;
-  --mat-form-field-subscript-text-size: 14px;
+  --mat-form-field-subscript-text-size: 1rem;
 
   //Primary Button
   --mdc-filled-button-container-color: rgb(95, 78, 169);
   --mdc-filled-button-label-text-size: 20px;
-  --mdc-filled-button-label-text-tracking: 0.7px;
+  --mdc-filled-button-label-text-weight: 600;
+  --mdc-filled-button-label-text-tracking: 1px;
+
+  --mat-menu-item-label-text-size: 1.5rem;
+  .mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+    text-shadow: 1px 3px lightgray
+  }
 }
 
 /** Template:
@@ -59,13 +65,14 @@ html, body { height: 100%; }
 body { 
   margin: 0;
   font-family: "VT323", serif;
-  font-size: 18px;
+  font-size: 28px;
+  -webkit-font-smoothing: antialiased;
   background: var(--md-sys-color-on-primary);
   color: rgb(53, 52, 55);
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.25rem;
   font-weight: 500;
   margin-bottom: 0.25em;
   margin-top: 0;
@@ -73,22 +80,24 @@ h1 {
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2rem;
+  font-weight: 500;
   margin-bottom: 0.25em;
   margin-top: 0;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.75rem;
   margin-bottom: 0.25em;
   margin-top: 0;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 h4 {
-  font-size:1.25em;
+  font-size: 1.25rem;
   margin-bottom: 0.25em;
+  margin-top: 0;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 

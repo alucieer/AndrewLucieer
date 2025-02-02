@@ -13,8 +13,10 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 500px;
+    width: 100vw;
+    max-width: 500px;
 }
+
 mat-form-field {
     width: 100%;
 }
