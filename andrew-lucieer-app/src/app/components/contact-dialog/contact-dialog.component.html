@@ -8,7 +8,7 @@
 <header>
     <h3 mat-dialog-title>Contact Me</h3>
     <button mat-icon-button mat-dialog-close>
-        <mat-icon>close</mat-icon>
+        <mat-icon class="close-icon">close</mat-icon>
     </button>
 </header>
 
@@ -22,6 +22,7 @@
                    formControlName="name"
                    cdkFocusInitial
                    required />
+            <mat-error>Please enter your name</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
@@ -30,9 +31,7 @@
                    type='email' 
                    formControlName="email" 
                    required />
-            <mat-error>
-                Please enter a valid email address
-            </mat-error>
+            <mat-error>Please enter a valid email address</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
@@ -41,6 +40,7 @@
                       formControlName="message"
                       required
                       rows="5"></textarea>
+            <mat-error>Please enter a message</mat-error>
         </mat-form-field>
     </form>
 </mat-dialog-content>

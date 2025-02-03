@@ -3,6 +3,9 @@
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
 
+/** SNES Color Pallette 
+https://www.color-hex.com/color-palette/22515 **/
+
 html {
   @include mat.theme((
     color: (
@@ -17,6 +20,9 @@ html {
   ));
 }/* You can add global styles to this file, and also import other style files */
 
+a:visited {
+  color:unset;
+}
 .mat-icon {
   font-family: 'Material Symbols Outlined';
   font-variation-settings:
@@ -40,9 +46,16 @@ body {
 
   --mat-menu-item-label-text-size: 1.5rem;
   .mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
-    text-shadow: 1px 3px lightgray
+    //text-shadow: 1px 3px lightgray
   }
+
+  .cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, .5);
 }
+}
+
+/** Fallout UI
+https://www.codemotion.com/magazine/frontend/creating-a-fallout-style-ui-using-modern-css/ **/
 
 /** Template:
 https://dribbble.com/shots/11199542-Neteor-Web-Designer-Portfolio-HTML5/attachments/2805050?mode=media
@@ -52,23 +65,134 @@ https://dribbble.com/shots/11199542-Neteor-Web-Designer-Portfolio-HTML5/attachme
 //https://www.youtube.com/watch?v=rLtF6MzTRA0&t=2s
 //https://stackoverflow.com/questions/62549139/it-is-possible-change-angular-material-mat-slide-toggle-icon
 body.light-mode {
+  --background: rgb(237, 237, 237);
+  --mat-sys-background: rgb(237, 237, 237);
+  --mat-sys-on-background: rgb(53, 52, 55);
 
+  --mdc-outlined-text-field-input-text-color: rgb(53, 52, 55);
+  
+  --mdc-outlined-card-container-color: white;
+  --mdc-outlined-card-outline-color: #D3D3D3;
 
+  --mdc-dialog-container-color: white;
+
+  --mat-icon-color: rgb(53, 52, 55);
+
+  mat-toolbar { 
+    background: white; 
+  
+    nav#top-nav a {
+
+      &.active {
+        color: #4f43ae;
+      }
+
+      &:hover:not(.active) {
+        color: black;
+      }
+    }
+  }
+
+  #logo {
+    color: #4f43ae;
+    text-shadow: 1px 1px rgba(221, 221, 221, 0.8666666667);
+  }
+
+  #social-media-links a {
+    color: black;
+    transition: 200ms opacity;
+    opacity: 1;
+
+    &:not(:hover) {
+      opacity: 0.6;
+    }
+  }
 }
 
 
 body.dark-mode {
+  --background: #1f2027;
+  --mat-sys-surface: darkgray;
+  --mat-sys-background: black;
+  --mat-sys-on-background: lightgray;
+  
+  --container-background-color: black;
+  --mdc-outlined-text-field-input-text-color: lightgray;
+  --mdc-outlined-text-field-hover-outline-color: white;
+  --mdc-outlined-text-field-error-hover-outline-color: white;
+  --mdc-outlined-text-field-label-text-color: lightgray;
+  --mdc-outlined-text-field-hover-label-text-color: lightgray;
+  --mdc-outlined-text-field-error-hover-label-text-color: red;
+  --mdc-outlined-card-container-color: var(--background);
+  --mdc-outlined-card-outline-color: var(--background);
 
+  --mdc-filled-button-disabled-container-color: rgb(74, 73, 73);
+
+  --mdc-dialog-container-color: var(--background);
+
+  --mat-icon-color: lightgray;
+  --mdc-switch-selected-track-color: #4f43ae;
+  --mdc-switch-selected-hover-track-color: #4f43ae;
+  --mdc-switch-selected-focus-track-color: #4f43ae;
+  mat-toolbar { 
+    background: var(--background); 
+
+    nav#top-nav a {
+      color: rgb(255,255,255, 0.9);
+      &.active {
+        color: rgb(53, 52, 55);
+        //color:white;
+        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+        font-weight: 600;
+      }
+
+      &:hover:not(.active) {
+        color: white;
+      }
+    }
+  }
+
+  #social-media-links a {
+    color: white;
+  }
+
+  #logo {
+    color: rgb(255,255,255, 1);
+    text-shadow: 1px 1px #4f43ae;
+  }
 }
 
 html, body { height: 100%; }
 body { 
   margin: 0;
-  font-family: "VT323", serif;
+  font-family: "VT323", monospace;
   font-size: 28px;
-  -webkit-font-smoothing: antialiased;
-  background: var(--md-sys-color-on-primary);
-  color: rgb(53, 52, 55);
+  //-webkit-font-smoothing: antialiased;
+  background: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
+
+  mat-toolbar a {
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3333333333) 5%,
+      #000 50%
+    );
+    mask-size: 100% 2px;
+  }
+}
+
+//Scanline effect
+h1, h2, h3, h4, mat-card-content {
+    mask-image: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.3333333333) 5%,
+                  #000 50%
+                );
+    mask-size: 100% 2px;
+}
+
+mat-card-content {
+  padding: 30px !important;
 }
 
 h1 {
@@ -76,7 +200,7 @@ h1 {
   font-weight: 500;
   margin-bottom: 0.25em;
   margin-top: 0;
-  -webkit-font-smoothing: subpixel-antialiased;
+  //-webkit-font-smoothing: subpixel-antialiased;
 }
 
 h2 {
@@ -84,30 +208,25 @@ h2 {
   font-weight: 500;
   margin-bottom: 0.25em;
   margin-top: 0;
-  -webkit-font-smoothing: subpixel-antialiased;
+  //-webkit-font-smoothing: subpixel-antialiased;
 }
 
 h3 {
   font-size: 1.75rem;
   margin-bottom: 0.25em;
   margin-top: 0;
-  -webkit-font-smoothing: subpixel-antialiased;
+  font-weight: bold;
+  //-webkit-font-smoothing: subpixel-antialiased;
 }
 
 h4 {
   font-size: 1.25rem;
   margin-bottom: 0.25em;
   margin-top: 0;
-  -webkit-font-smoothing: subpixel-antialiased;
+  //-webkit-font-smoothing: subpixel-antialiased;
 }
 
 *[mat-dialog-title] {
   padding-top: 20px;
-}
-mat-card.mat-mdc-card {
-  box-shadow: 0 2px 1px -1px #0003,0 1px 1px #00000024,0 1px 3px #0000001f;
-
-  mat-card-content {
-    padding: 30px !important;
-  }
+  font-size: 2.25rem;
 }

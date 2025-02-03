@@ -2,6 +2,136 @@ h2 {
     margin-top: 0;
 }
 
+.cards, .cards * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+::ng-deep :root {
+    --cover-size: 15rem;
+}
+
+@media (max-width: 1024px) {
+    ::ng-deep :root {
+        --cover-size: 9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    ::ng-deep :root {
+        --cover-size: 6rem;
+    }
+}
+
+/* Animation bumps up the z-index, to make sure it’s on top */
+@keyframes adjust-z-index {
+    0% {
+        z-index: 1;
+    }
+    50% {
+        z-index: 100; /* When at the center, be on top */
+    }
+    100% {
+        z-index: 1;
+    }
+}
+
+@keyframes rotate-cover {
+	0% {
+		transform: translateX(-100%) rotateY(-45deg);
+	}
+	35% {
+		transform: translateX(0) rotateY(-45deg);
+	}
+	50% {
+		transform: rotateY(0deg) translateZ(1em) scale(1.5);
+	}
+	65% {
+		transform: translateX(0) rotateY(45deg);
+	}
+	100% {
+		transform: translateX(100%) rotateY(45deg);
+	}
+}
+
+.cards li {
+    display: inline-block;
+    width: var(--cover-size);
+    height: var(--cover-size);
+
+    /* Track this element as it intersects the scrollport */
+    view-timeline-name: --li-in-and-out-of-view;
+    view-timeline-axis: inline;
+
+    /* Link an animation to the established view-timeline and have it run during the contain phase */
+    animation: linear adjust-z-index both;
+    animation-timeline: --li-in-and-out-of-view;
+
+    
+    /* Make the 3D stuff work… */
+    perspective: 40em;
+
+    position: relative;
+    z-index: 1;
+    will-change: z-index;
+
+    user-select: none;
+
+    scroll-snap-align: center;
+}
+
+//.cards li img,
+.cards li app-portfolio-image {
+    display: block;
+
+    -webkit-box-reflect: below 0.5em
+        linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+}
+
+::ng-deep .cards li app-portfolio-image img {
+    width: var(--cover-size);
+    height: var(--cover-size);
+}
+
+.cards {
+    --size: 6;
+    min-height: calc(var(--cover-size)* 2.5);
+    width: calc(var(--cover-size)* var(--size));
+    margin: 0 auto;
+    padding: calc(var(--cover-size) / 3* 2) 0;
+    position: relative;
+    max-width: 90vw;
+    list-style: none;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    outline: 1px solid #333;
+    background: rgba(0 0 0 / 0.1);
+}
+
+/* Because the total size is 6, with 1 cover in the middle, there’s space for 5 left … so 2.5 on each side */
+/* Didn’t work (on the right): `calc(50% - (var(--cover-size) / 2));` */
+.cards li:first-of-type {
+    margin-left: calc(50% - (var(--cover-size) / 2));
+}
+.cards li:last-of-type {
+    margin-right: calc(50% - (var(--cover-size) / 2));
+}
+
+//.cards li > img,
+.cards li > app-portfolio-image {
+    /* Link an animation to the established view-timeline (of the parent li) and have it run during the contain phase */
+    animation: linear rotate-cover both;
+    animation-timeline: --li-in-and-out-of-view;
+
+    /* Prevent FOUC */
+    transform: translateX(-100%) rotateY(-45deg);
+
+    box-shadow: 4px 6px 3px 0 rgba(0, 0, 0, 0.13), 0 1px 1px 0 rgba(0, 0, 0, 0.11);
+    will-change: transform;
+}
+
 mat-card {
     width: fit-content;
 }

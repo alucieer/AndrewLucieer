@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PortfolioImageComponent } from '../portfolio-image/portfolio-image.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-portfolio',

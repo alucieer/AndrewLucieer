@@ -11,6 +11,8 @@ import { ContactDialogComponent } from './components/contact-dialog/contact-dial
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DialogService } from './services/dialolg/dialog.service';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatRippleModule} from '@angular/material/core';
 
 @Component({
   selector: 'app-root',
@@ -20,9 +22,10 @@ import { DialogService } from './services/dialolg/dialog.service';
     RouterLinkActive, 
     MatButtonModule, 
     MatIconModule,
+    MatTooltipModule,
     MatMenuModule,
-    //ThemeModeToggleComponent
-    
+    ThemeModeToggleComponent,
+    MatRippleModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -1,3 +1,9 @@
+/** Shadow Scroll Animation liberated from: https://scroll-driven-animations.style/demos/scroll-shadows/css/ **/
+@keyframes reveal {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
 ::ng-deep .portfolio-image-dialog.cdk-overlay-pane {
     //width: calc(100vw - 60px);
     max-height: calc(100vh - 120px);
@@ -14,22 +20,51 @@ header {
         font-weight: 500;
     }
 }
+@supports (animation-timeline: scroll()) {
+    section.image-container {
+        //height: calc(100vh - 300px);
+        overflow-y: auto;
+        scroll-timeline: --scroll-timeline y;
+        text-align: center;
+        margin: 15px 30px 0 30px;
 
-section.image-container {
-    height: calc(100vh - 300px);
-    overflow-y: auto;
-    text-align: center;
-    padding: 30px;
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: sticky;
+            left: 0;
+            right: 0;
+            height: 0.75rem;
 
-    img {
-        width: 100%;
-        border: 1px solid lightgray;
+            animation-name: reveal;
+            animation-timeline: --scroll-timeline;
+            animation-fill-mode: both;
+        }
+
+        &::before {
+            top: 0;
+            background: radial-gradient(farthest-side at 50% 0, rgb(0 0 0 / 0.5), rgb(0 0 0 / 0));
+            animation-range: 1em 2em;
+            animation-direction: reverse;
+        }
+
+        &::after {
+            animation-range: calc(100% - 2em) calc(100% - 1em);
+            bottom: 0;
+            background: radial-gradient(farthest-side at 50% 100%, rgb(0 0 0 / 0.5), rgb(0 0 0 / 0));
+        }
+
+        img {
+            width: 100%;
+            border: 1px solid lightgray;
+        }
     }
 }
 
 caption {
     max-height: 140px;
-    border-top:1px solid lightgray;
-    background: #fafafa;
+    border-top: 1px solid rgb(125,125,125, 1);
+    //background: #fafafa;
     padding: 20px;
 }

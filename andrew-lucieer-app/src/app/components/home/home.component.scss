@@ -14,6 +14,13 @@
     padding: 30px;
 }
 
+.crt-monitor {
+    box-shadow: inset 0px 0px 2rem;
+    background-image: linear-gradient(0deg, #0000 10%, #fff1 90%, #0000 100%);
+    animation: crtAnimation 100s linear infinite;
+    background-size: 100% 80%;
+}
+
 #quote-container {
     display: flex;
     flex-direction: column;
@@ -26,8 +33,6 @@
     color: #fafafa;
     font-weight: 400;
     //background: gray;
-
-    color: white;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -35,20 +40,20 @@
 
     #random-quote {
         display: inline;
-        font-size: 1.75rem;
+        font-size: clamp(18px, 3vw, 60px);
         font-style: italic;
-        line-height: 1.75rem;
+        line-height: 2rem;
     }
 
     #author {
         display: block;
-        font-size: 1.75rem;
-        line-height: 1.75rem;
-        margin: 1.75rem 0 0 0;
+        font-size: clamp(18px, 3vw, 60px);
+        line-height: 2rem;
+        margin: .75rem 0 0 0;
     }
 
     .quote-symbol {
-        font-size: 1.75rem;
+        font-size: clamp(22px, 2.5vw, 60px);
         display: inline;
         font-weight: 600;
     } 
@@ -79,15 +84,15 @@ ul {
     white-space: wrap;
     //padding: 20px;
     //font-size: 1.5em;
-    color: rgb(53 52 55);
+    //color: rgb(53 52 55);
 }  
 
 ::ng-deep #skills-responsibilities-card {
     white-space: wrap;
     //font-size: 1.5em;
-    color: rgb(53 52 55);
+    //color: rgb(53 52 55);
 
-    background: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.9)), url("https://drsarahmckay.com/wp-content/uploads/2013/09/brain-2062057_1920-768x585.jpg");
+    //background: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.9)), url("https://drsarahmckay.com/wp-content/uploads/2013/09/brain-2062057_1920-768x585.jpg");
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: top;
@@ -98,6 +103,6 @@ ul {
         flex-wrap: wrap;
         //justify-content: center;
 
-        gap: 1rem;
+        gap: 2rem;
     }
 }

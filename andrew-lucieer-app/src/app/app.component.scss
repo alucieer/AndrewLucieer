@@ -1,14 +1,17 @@
+/** 
+Scroll animations (https://scroll-driven-animations.style/ https://www.youtube.com/watch?v=rpCQEQAlMIE):
+
+ Shrinking Header Liberated from https://scroll-driven-animations.style/demos/shrinking-header-shadow/css/
+**/
+
 ::ng-deep body {
     height: unset;
-    background: rgb(237 237 237);
+    //background: rgb(237 237 237);
 
     &.dialog-open {
         overflow-y: hidden;
     }
 }
-
-/** Shrinking Header Liberated from 
-https://scroll-driven-animations.style/demos/shrinking-header-shadow/css/ **/
 
 @keyframes adjust-header {
     to { 
@@ -35,7 +38,7 @@ https://scroll-driven-animations.style/demos/shrinking-header-shadow/css/ **/
 
 //Styles for Scroll Event
 @supports (animation-timeline: scroll()) {
-    header {
+    mat-toolbar {
         animation: adjust-header linear both;
         position: fixed;
         z-index: 1;
@@ -47,7 +50,7 @@ https://scroll-driven-animations.style/demos/shrinking-header-shadow/css/ **/
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
-        background: rgb(255, 255, 255);
+        //background: rgb(255, 255, 255);
         /*background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);*/
@@ -70,38 +73,46 @@ https://scroll-driven-animations.style/demos/shrinking-header-shadow/css/ **/
         }
         #logo {
             animation: logo-adjust linear both;
-            text-shadow: 6px 3px #dddd;
             backdrop-filter: blur(2px); 
-            font-size: 2.5rem;
+            font-size: clamp(18px, 7vw, 50px);
             text-decoration: none;
             -webkit-font-smoothing: auto;
             font-weight: bold;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3333333333) 5%, #000 70%);
+            mask-size: 100% 2px;
         }
 
 
     }
-    header, #logo, .header-bg {
+    mat-toolbar, #logo, .header-bg {
         animation-timeline: scroll() !important;
         animation-range: 0 150px !important;
     }
 }
 
-
+#header-right {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
 
 nav#top-nav {
     display: flex;
     justify-content: end;
-    gap: 2.5rem;
+    gap: 1rem;
 
     a {
-        color: black;
+        //color: black;
         font-size: 1.85rem;
         font-weight: 500;
         letter-spacing: 0.5px;
         padding:0 10px 0 10px;
         -webkit-font-smoothing: initial;
         text-decoration: none;
+        -webkit-font-smoothing: subpixel-antialiased;
         cursor: pointer;
+        //cursor: url('/images/crosshair.svg'), default;
 
         &:hover {
             text-decoration: underline;
@@ -109,16 +120,19 @@ nav#top-nav {
         }
 
         &.active {
-            color: #cd1635;
-            text-decoration: underline;
+            //color: #cd1635;
+            font-weight: 600;
+            mask-image: none;
+            //text-decoration: underline;
         }
     }
 }
 
 ::ng-deep .mat-mdc-menu-panel.mobile-nav-menu {
     a.active .mat-mdc-menu-item-text {
-        color: #cd1635;
+        //color: #cd1635;
         font-weight: 500;
+        mask-image: none;
     }
 }
 
@@ -129,14 +143,23 @@ main {
     padding: 60px 30px 30px 30px;
 }
 
-//Scroll animations (https://scroll-driven-animations.style/ https://www.youtube.com/watch?v=rpCQEQAlMIE):
+footer#social-media-links {
+    display: flex;
+    justify-content: center;
+    //gap: 10px; 
+    margin: 4rem 0 1rem 0;
 
-#side-nav-social {
-    display: none;
-    position: fixed;
-    right: 0;
-    background: black;
-    border-radius: 8px;
-    padding: 30px;
-    width: 50px;
+    svg, img {
+        //height: auto;
+        width: auto;
+    }
+
+    a {
+        transition: 200ms opacity;
+        opacity: 1;
+
+        &:not(:hover) {
+            opacity: 0.6;
+        }
+    }
 }
