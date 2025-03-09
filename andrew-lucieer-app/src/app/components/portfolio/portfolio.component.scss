@@ -57,7 +57,7 @@ h2 {
 
 .cards li {
     display: inline-block;
-    width: var(--cover-size);
+    //width: var(--cover-size);
     height: var(--cover-size);
 
     /* Track this element as it intersects the scrollport */
@@ -90,7 +90,7 @@ h2 {
 }
 
 ::ng-deep .cards li app-portfolio-image img {
-    width: var(--cover-size);
+    //width: var(--cover-size);
     height: var(--cover-size);
 }
 
