@@ -1,0 +1,16 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Define the scanline pattern -->
+    <pattern id="scanlinePattern" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="transparent"/>
+      <rect width="4" height="2" y="2" fill="#1E90FF" opacity="0.5"/>
+    </pattern>
+    <!-- Create a mask to apply the scanline effect to the text -->
+    <mask id="scanlineMask">
+      <rect width="100" height="100" fill="white"/>
+      <rect width="100" height="100" fill="url(#scanlinePattern)"/>
+    </mask>
+  </defs>
+  <!-- AL text, maximized to fit the canvas, with scanline effect -->
+  <text x="0" y="90" font-family="Arial" font-size="80" fill="#4169E1" font-weight="bold" mask="url(#scanlineMask)">AL</text>
+</svg>
