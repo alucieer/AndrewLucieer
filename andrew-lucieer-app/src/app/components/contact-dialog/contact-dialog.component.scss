@@ -13,10 +13,14 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100vw;
+    width: 100%;
     max-width: 500px;
 }
 
 mat-form-field {
     width: 100%;
+}
+
+::ng-deep .mdc-dialog {
+    width: 100vw;
 }
