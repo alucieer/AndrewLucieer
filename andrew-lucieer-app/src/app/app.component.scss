@@ -35,36 +35,50 @@ Scroll animations (https://scroll-driven-animations.style/ https://www.youtube.c
     }
 }
 
+mat-toolbar {
+    position: fixed;
+    z-index: 1;
+    top:0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 100px;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+
+    .header-bg {
+        position: absolute;
+        opacity: 0.2;
+        inset: 0;
+        top: auto;
+        height: 13rem;
+        //background: linear-gradient(to bottom, #fff6 0%, #fff 80%), url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/vecteezy_cityscape-modern-flat-line-landscape-vector-city-landscape_6619652-2.jpg) repeat-x 50% 100% / 650px auto;
+        background: url('https://cdn.vectorstock.com/i/1000v/75/77/electronic-circuit-board-vector-51987577.jpg');
+        z-index: -1;
+    }
+}
+
+
+@supports (not (animation-timeline: scroll())) {
+    mat-toolbar {
+        line-height:62px
+    }
+}
 
 //Styles for Scroll Event
 @supports (animation-timeline: scroll()) {
     mat-toolbar {
         animation: adjust-header linear both;
-        position: fixed;
-        z-index: 1;
-        top:0;
-        width: 100%;
-        line-height: 100px;
-        padding: 5px 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-sizing: border-box;
+
         //background: rgb(255, 255, 255);
         /*background: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);*/
 
         .header-bg  {
-            opacity: 0.2;
             animation: move-and-fade-background linear both;
-            position: absolute;
-            inset: 0;
-            top: auto;
-            height: 13rem;
-            //background: linear-gradient(to bottom, #fff6 0%, #fff 80%), url(https://scroll-driven-animations.style/demos/shrinking-header-shadow/shared/vecteezy_cityscape-modern-flat-line-landscape-vector-city-landscape_6619652-2.jpg) repeat-x 50% 100% / 650px auto;
-            background: url('https://cdn.vectorstock.com/i/1000v/75/77/electronic-circuit-board-vector-51987577.jpg');
-            z-index: -1;
             //opacity:0.9;
         }
 
