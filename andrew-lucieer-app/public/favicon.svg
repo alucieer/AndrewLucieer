@@ -12,5 +12,5 @@
     </mask>
   </defs>
   <!-- AL text, maximized to fit the canvas, with scanline effect -->
-  <text x="0" y="90" font-family="Arial" font-size="80" fill="#4169E1" font-weight="bold" mask="url(#scanlineMask)">AL</text>
+  <text x="0" y="80" font-family="Arial" font-size="80" fill="#4169E1" font-weight="bold" mask="url(#scanlineMask)">AL</text>
 </svg>

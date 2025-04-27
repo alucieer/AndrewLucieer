@@ -1,5 +1,5 @@
 <!-- https://dribbble.com/shots/11199542-Neteor-Web-Designer-Portfolio-HTML5 -->
-<mat-toolbar [ngClass]="{'header-shadow': showHeaderShadow}">
+<mat-toolbar [ngClass]="{ 'scrolled-down': scrolledDown }">
   <div class="header-bg"></div>
   <a href="/home" id="logo" mat-button tabIndex="1">
     Andrew Lucieer
@@ -20,8 +20,7 @@
 
   <!-- Mobile Nav Menu -->
   <button mat-icon-button *ngIf="isSmallScreen"
-          [matMenuTriggerFor]="menu" 
-          aria-label="Example icon-button with a menu">
+          [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu" class="mobile-nav-menu" role="navigation" aria-haspopup>
@@ -47,7 +46,7 @@
   </span>
 </mat-toolbar>
 
-<main class="main" id="page-{{activeRouteURL}}">
+<main class="main" id="page-{{activeRouteURL}}" [ngClass]="{'small-screen': isSmallScreen}">
   <router-outlet />
 
   <footer id="social-media-links">

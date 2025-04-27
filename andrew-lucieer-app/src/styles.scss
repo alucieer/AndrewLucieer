@@ -45,13 +45,15 @@ body {
   --mdc-filled-button-label-text-tracking: 1px;
 
   --mat-menu-item-label-text-size: 1.5rem;
+
+  --mdc-dialog-container-shape: 8px;
   .mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
     //text-shadow: 1px 3px lightgray
   }
 
   .cdk-overlay-dark-backdrop {
     background: rgba(0, 0, 0, .5);
-}
+  }
 }
 
 /** Fallout UI
@@ -196,7 +198,7 @@ mat-card-content {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2.2rem;
   font-weight: 500;
   margin-bottom: 0.25em;
   margin-top: 0;
@@ -227,6 +229,7 @@ h4 {
 }
 
 *[mat-dialog-title] {
-  padding-top: 20px;
-  font-size: 2.25rem;
+  padding-top: 0.5rem;
+  font-size: 2rem;
+  font-size: clamp(18px, 2.5rem, 26px);
 }

@@ -1,38 +1,45 @@
 <h2>Examples of My Work</h2>
+<button mat-fab class="scroll-left-btn" (click)="scrollLeft()">
+    <mat-icon>arrow_back_ios</mat-icon>
+</button>
 
-<ul class="cards">
+<button mat-fab class="scroll-right-btn" (click)="scrollRight()">
+    <mat-icon>arrow_forward_ios</mat-icon>
+</button>
+
+<ul class="images-container" #imagesContainer>
 	<li>
 		<app-portfolio-image
             filename="Portfolio-1.png"
-            title="Manager Dashboard"
-            description="Magnit VMS's Dashboard for managers to approve timesheets, expenses and manage job requisitions.  Panels can be dragged to be reordered">
+            title="Dashboard for Managers"
+            description="Magnit VMS's dashboard for managers to approve timesheets, expenses and manage job requisitions.">
         </app-portfolio-image>
 	</li>
 	<li>
         <app-portfolio-image
             filename="Portfolio-2.png"
-            title="Create Job Requisition"
+            title="Job Creation Wizard"
             description="Wizard that allows managers to creates job requisitions in Magnit VMS.  Work can be saved as a draft and completed later.">
         </app-portfolio-image>
 	</li>
 	<li>
 		<app-portfolio-image
             filename="Portfolio-3.png"
-            title="Worker Time Sheet Entry Page"
-            description="Page for workers to add time sheet entries in Magnit VMS.  I created mockups for this page and also implemented the front-end UI shown above.  Sidenav allows quick navigation to specific days.">
+            title="Time Entry Page"
+            description="Magnit VMS's time entry page">
         </app-portfolio-image>
 	</li>
 	<li>
 		<app-portfolio-image
             filename="Portfolio-4.png"
-            title="Worker Add Expense Page"
-            description="Page for workers to add job expenses in Magnit VMS.  I created mockups for this page and also implemented the front-end UI shown above.">
+            title="Add Expense Page"
+            description="Magnit VMS's expense entry page">
         </app-portfolio-image>
 	</li>
 	<li>
 		<app-portfolio-image
             filename="Portfolio-5.png"
-            title="MSP Dashboard"
+            title="Dashboard for Admins"
             description="Magnit VMS's Dashboard for MSPs to manage application data for clients">
         </app-portfolio-image>
 	</li>

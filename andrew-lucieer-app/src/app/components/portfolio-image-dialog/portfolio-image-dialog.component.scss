@@ -7,26 +7,42 @@
 ::ng-deep .portfolio-image-dialog.cdk-overlay-pane {
     //width: calc(100vw - 60px);
     max-height: calc(100vh - 120px);
-    max-width: calc(100vw - 60px);
+    max-width: calc(100vw - 30px);
+    border-radius: 8px;
 }
 
 header {
+    position: fixed;
+    background: white;
+    width: calc(100% - 60px);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 5px 15px;
 
     h3[mat-dialog-title] {
         font-weight: 500;
     }
 }
-@supports (animation-timeline: scroll()) {
+
+section.image-container {
+    margin: 50px 0 0 0;
+    overflow-y: auto;
+
+    img {
+        max-width: 100%;
+        max-height: calc(100% - 100px);
+    }
+}
+
+/*@supports (animation-timeline: scroll()) {
     section.image-container {
         //height: calc(100vh - 300px);
         overflow-y: auto;
         scroll-timeline: --scroll-timeline y;
         text-align: center;
-        margin: 15px 30px 0 30px;
 
         &::before,
         &::after {
@@ -54,13 +70,8 @@ header {
             bottom: 0;
             background: radial-gradient(farthest-side at 50% 100%, rgb(0 0 0 / 0.5), rgb(0 0 0 / 0));
         }
-
-        img {
-            width: 100%;
-            border: 1px solid lightgray;
-        }
     }
-}
+}*/
 
 caption {
     max-height: 140px;
