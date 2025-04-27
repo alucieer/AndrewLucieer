@@ -9,10 +9,10 @@ button
 {
     position: absolute;
     z-index: 100;
-    margin-top: 20%;
+    margin-top: 12%;
 
     mat-icon {
-        font-size: 18px;
+        font-size: 23px;
     }
 
     &.scroll-left-btn {
@@ -101,7 +101,7 @@ button
     list-style: none;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
-    outline: 1px solid #333;
+    outline: 1px solid #b2b2b2;
     background: rgba(0 0 0 / 0.1);
     overflow-x: scroll;
     scroll-behavior: smooth;

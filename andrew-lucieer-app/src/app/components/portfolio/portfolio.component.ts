@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { PortfolioImageComponent } from '../portfolio-image/portfolio-image.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,18 +10,26 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
-export class PortfolioComponent {
-
-
+export class PortfolioComponent implements AfterViewInit {
+  imgCount: number = 6;
+  scrollAmt: number;
   @ViewChild('imagesContainer') imagesContainer: ElementRef;
 
+  ngAfterViewInit() {
+    this.scrollAmt = this.imagesContainer.nativeElement.offsetWidth / this.imgCount;
+  }
+
   scrollLeft() {
-    const container = this.imagesContainer.nativeElement;
-    container.scrollLeft -= 100;
+    this.scrollImages(this.scrollAmt * -1);
   }
 
   scrollRight() {
+    this.scrollImages(this.scrollAmt);
+  }
+
+  scrollImages(xAdjustment: number) {
     const container = this.imagesContainer.nativeElement;
-    container.scrollLeft += 100;
+    const scrollPosition = container.scrollLeft + xAdjustment;
+    container.scroll(scrollPosition, 0);
   }
 }
