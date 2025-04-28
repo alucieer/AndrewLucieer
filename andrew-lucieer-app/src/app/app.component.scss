@@ -19,6 +19,7 @@ mat-toolbar {
     z-index: 101;
     top:0;
     width: 100vw;
+    min-width: 100vw;
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
@@ -28,7 +29,7 @@ mat-toolbar {
     transition: box-shadow, line-height 100ms;
 
     .header-bg  {
-        opacity: 0.2;
+        opacity: 0;
         transition: opacity 200ms;
         animation: move-and-fade-background linear both;
         position: absolute;
@@ -44,7 +45,7 @@ mat-toolbar {
     #logo {
         height: 100%;
         backdrop-filter: blur(2px); 
-        font-size: clamp(24px, 7vw, 50px);
+        font-size: clamp(30px, 7vw, 50px);
         text-decoration: none;
         -webkit-font-smoothing: auto;
         font-weight: bold;
@@ -59,7 +60,7 @@ mat-toolbar {
         line-height: 55px;
 
         .header-bg {
-            opacity: 0;
+            opacity: 0.2;
         }
     }
 }

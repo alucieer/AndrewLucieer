@@ -1,53 +1,58 @@
-<h2>Examples of My Work</h2>
-<button mat-fab class="scroll-left-btn" (click)="scrollLeft()">
-    <mat-icon>arrow_back_ios</mat-icon>
-</button>
+<main id="page-container">
+    <h2>Examples of My Work</h2>
 
-<button mat-fab class="scroll-right-btn" (click)="scrollRight()">
-    <mat-icon>arrow_forward_ios</mat-icon>
-</button>
+    <div id="images-container">
+        <button mat-fab class="scroll-left-btn" (click)="scrollLeft()">
+            <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+        
+        <ul #imagesContainer>
+            <li>
+                <app-portfolio-image
+                    filename="Portfolio-1.png"
+                    title="Dashboard for Managers"
+                    description="Magnit VMS's dashboard for managers to approve timesheets, expenses and manage job requisitions.">
+                </app-portfolio-image>
+            </li>
+            <li>
+                <app-portfolio-image
+                    filename="Portfolio-2.png"
+                    title="Job Creation Wizard"
+                    description="Wizard that allows managers to creates job requisitions in Magnit VMS.  Work can be saved as a draft and completed later.">
+                </app-portfolio-image>
+            </li>
+            <li>
+                <app-portfolio-image
+                    filename="Portfolio-3.png"
+                    title="Time Entry Page"
+                    description="Magnit VMS's time entry page">
+                </app-portfolio-image>
+            </li>
+            <li>
+                <app-portfolio-image
+                    filename="Portfolio-4.png"
+                    title="Add Expense Page"
+                    description="Magnit VMS's expense entry page">
+                </app-portfolio-image>
+            </li>
+            <li>
+                <app-portfolio-image
+                    filename="Portfolio-5.png"
+                    title="Dashboard for Admins"
+                    description="Magnit VMS's Dashboard for MSPs to manage application data for clients">
+                </app-portfolio-image>
+            </li>
+            <li>
+                <app-portfolio-image
+                    filename="Portfolio-6.png"
+                    title="Currency Calculator"
+                    description="Mobile web app that converts sales prices between four currencies and allows calculations to be performed">
+                </app-portfolio-image>
+            </li>
+        </ul>
 
-<ul class="images-container" #imagesContainer>
-	<li>
-		<app-portfolio-image
-            filename="Portfolio-1.png"
-            title="Dashboard for Managers"
-            description="Magnit VMS's dashboard for managers to approve timesheets, expenses and manage job requisitions.">
-        </app-portfolio-image>
-	</li>
-	<li>
-        <app-portfolio-image
-            filename="Portfolio-2.png"
-            title="Job Creation Wizard"
-            description="Wizard that allows managers to creates job requisitions in Magnit VMS.  Work can be saved as a draft and completed later.">
-        </app-portfolio-image>
-	</li>
-	<li>
-		<app-portfolio-image
-            filename="Portfolio-3.png"
-            title="Time Entry Page"
-            description="Magnit VMS's time entry page">
-        </app-portfolio-image>
-	</li>
-	<li>
-		<app-portfolio-image
-            filename="Portfolio-4.png"
-            title="Add Expense Page"
-            description="Magnit VMS's expense entry page">
-        </app-portfolio-image>
-	</li>
-	<li>
-		<app-portfolio-image
-            filename="Portfolio-5.png"
-            title="Dashboard for Admins"
-            description="Magnit VMS's Dashboard for MSPs to manage application data for clients">
-        </app-portfolio-image>
-	</li>
-	<li>
-		<app-portfolio-image
-            filename="Portfolio-6.png"
-            title="Currency Calculator"
-            description="Mobile web app that converts sales prices between four currencies and allows calculations to be performed">
-        </app-portfolio-image>
-	</li>
-</ul>
+        <button mat-fab class="scroll-right-btn" (click)="scrollRight()">
+            <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+    </div>
+</main>

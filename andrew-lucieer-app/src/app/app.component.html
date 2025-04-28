@@ -9,7 +9,7 @@
     <app-theme-mode-toggle></app-theme-mode-toggle>
 
     <!-- Desktop Nav -->
-  <nav id="top-nav" *ngIf="!isSmallScreen" role="navigation">
+  <nav id="top-nav" *ngIf="!appSvc.isSmallScreen" role="navigation">
     <a mat-button routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page" tabIndex="3">Home</a>
     <!--<a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>-->
     <!--<a routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Services</a>-->
@@ -19,7 +19,7 @@
   </nav>
 
   <!-- Mobile Nav Menu -->
-  <button mat-icon-button *ngIf="isSmallScreen"
+  <button mat-icon-button *ngIf="appSvc.isSmallScreen"
           [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
   </button>
@@ -46,7 +46,7 @@
   </span>
 </mat-toolbar>
 
-<main class="main" id="page-{{activeRouteURL}}" [ngClass]="{'small-screen': isSmallScreen}">
+<main class="main" id="page-{{activeRouteURL}}" [ngClass]="{'small-screen': appSvc.isSmallScreen}">
   <router-outlet />
 
   <footer id="social-media-links">

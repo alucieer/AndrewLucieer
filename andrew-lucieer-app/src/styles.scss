@@ -80,6 +80,11 @@ body.light-mode {
 
   --mat-icon-color: rgb(53, 52, 55);
 
+  button.mdc-fab {
+    --mdc-fab-container-color: #4f43ae;
+    --mat-icon-color: white;
+  }
+
   mat-toolbar { 
     background: white; 
   
@@ -136,6 +141,11 @@ body.dark-mode {
   --mdc-switch-selected-track-color: #4f43ae;
   --mdc-switch-selected-hover-track-color: #4f43ae;
   --mdc-switch-selected-focus-track-color: #4f43ae;
+
+  button.mdc-fab {
+    --mat-icon-color: #4f43ae;
+  }
+
   mat-toolbar { 
     background: var(--background); 
 

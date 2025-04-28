@@ -3,6 +3,7 @@ import { PortfolioImageComponent } from '../portfolio-image/portfolio-image.comp
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { AppService } from '../../services/app-service/app.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,11 +13,19 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class PortfolioComponent implements AfterViewInit {
   imgCount: number = 6;
-  scrollAmt: number;
+  scrollAmt: number = 200;
   @ViewChild('imagesContainer') imagesContainer: ElementRef;
 
+  constructor(public appSvc: AppService) { }
+
   ngAfterViewInit() {
-    this.scrollAmt = this.imagesContainer.nativeElement.offsetWidth / this.imgCount;
+    setTimeout(() => { 
+      if (this.appSvc.isSmallScreen) {
+        this.scrollAmt = 150;
+      } else {
+        this.scrollAmt = this.imagesContainer.nativeElement.offsetWidth / this.imgCount;
+      }
+    }, 1);
   }
 
   scrollLeft() {

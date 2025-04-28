@@ -1,14 +1,22 @@
+import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable, signal } from "@angular/core";
 
 @Injectable({
 	providedIn: "root",
 })
-export class ThemeModeService {
+export class AppService {
 	themeModeSignal = signal<string>("light");
+	isSmallScreen: boolean = false;
 
-    constructor(@Inject(DOCUMENT) private document: Document) {
-
+    constructor(
+		@Inject(DOCUMENT) private document: Document,
+		breakpointObserver: BreakpointObserver) {
+			breakpointObserver.observe([
+				Breakpoints.Handset
+			]).subscribe(result => {
+				this.isSmallScreen = result.matches;
+			});
     }
 
 	setThemeMode(themeMode: string) {

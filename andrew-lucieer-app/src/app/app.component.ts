@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { DialogService } from './services/dialolg/dialog.service';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatRippleModule} from '@angular/material/core';
+import { AppService } from './services/app-service/app.service';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,6 @@ import {MatRippleModule} from '@angular/material/core';
 export class AppComponent implements OnInit {
   title = 'andrew-lucieer-app';
   scrolledDown: boolean = false;
-  isSmallScreen: boolean = false;
   readonly dialog = inject(MatDialog);
   routerSubscription: Subscription;
   activeRouteURL: string;
@@ -40,13 +40,8 @@ export class AppComponent implements OnInit {
   constructor(breakpointObserver: BreakpointObserver, 
     public dialogService: DialogService,
     private router: Router,
-    @Inject(DOCUMENT) private document: Document) {
-    breakpointObserver.observe([
-      Breakpoints.Handset
-    ]).subscribe(result => {
-      this.isSmallScreen = result.matches;
-    });
-  }
+    @Inject(DOCUMENT) private document: Document,
+    public appSvc: AppService) { }
 
   @HostListener('document:scroll', ['$event'])
   scrollEvent = (event:any): void => {
