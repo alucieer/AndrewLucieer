@@ -1,6 +1,6 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, inject, OnInit } from '@angular/core';
-import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { ThemeModeToggleComponent } from './theme-mode-toggle/theme-mode-toggle.component';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,12 +10,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { ContactDialogComponent } from './components/contact-dialog/contact-dialog.component';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DialogService } from './services/dialolg/dialog.service';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatRippleModule} from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRippleModule } from '@angular/material/core';
 import { AppService } from './services/app-service/app.service';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [CommonModule, 
     RouterOutlet, 
     RouterLink, 
@@ -25,7 +26,9 @@ import { AppService } from './services/app-service/app.service';
     MatTooltipModule,
     MatMenuModule,
     ThemeModeToggleComponent,
-    MatRippleModule
+    MatRippleModule,
+    CommonModule,
+    RouterModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

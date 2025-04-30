@@ -4,10 +4,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AppService } from '../../services/app-service/app.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio',
-  imports: [PortfolioImageComponent, MatCardModule, MatIconModule, MatButtonModule],
+  standalone: true,
+  imports: [PortfolioImageComponent, MatCardModule, MatIconModule, MatButtonModule, CommonModule, RouterModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
