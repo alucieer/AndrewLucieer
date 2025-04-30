@@ -34,6 +34,6 @@ export class ThemeModeToggleComponent implements AfterViewInit{
   }
 
   toggleTheme() {
-    this.themeModeService.updateThemeMode();
+    this.themeModeService.toggleThemeMode();
   }
 }

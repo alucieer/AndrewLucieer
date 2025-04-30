@@ -23,7 +23,7 @@ export class AppService {
 		this.themeModeSignal.set(themeMode);
 	}
 
-	updateThemeMode() {
+	toggleThemeMode() {
 		this.themeModeSignal.update((value) => (value === "dark" ? "light" : "dark"));
         
         //Updates theme mode in body classlist

@@ -1,6 +1,6 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, inject, OnInit } from '@angular/core';
-import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { ThemeModeToggleComponent } from './theme-mode-toggle/theme-mode-toggle.component';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -44,7 +44,8 @@ export class AppComponent implements OnInit {
     public dialogService: DialogService,
     private router: Router,
     @Inject(DOCUMENT) private document: Document,
-    public appSvc: AppService) { }
+    public appSvc: AppService,
+    private route: ActivatedRoute) { }
 
   @HostListener('document:scroll', ['$event'])
   scrollEvent = (event:any): void => {
@@ -56,7 +57,12 @@ export class AppComponent implements OnInit {
     }
   }
   
-  ngOnInit() { 
+  ngOnInit() {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDarkMode) {
+      this.appSvc.toggleThemeMode();
+    }
+
     this.routerSubscription = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.activeRouteURL = event.url.substring(1, event.url.length);
@@ -64,7 +70,6 @@ export class AppComponent implements OnInit {
     });
     
     this.dialogService.isDialogOpen$.subscribe(value => {
-      //Set theme mode
       this.document.body.classList.toggle('dialog-open');
     });
   }
