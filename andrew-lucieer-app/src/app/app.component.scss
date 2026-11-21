@@ -26,10 +26,11 @@ mat-toolbar {
     align-items: center;
     box-sizing: border-box;
     box-shadow: 0;
-    transition: box-shadow, line-height 100ms;
+    transition: box-shadow 100ms, line-height 100ms, background 200ms;
+    background: transparent;
 
     .header-bg  {
-        opacity: 0;
+        opacity: 0.2;
         transition: opacity 200ms;
         animation: move-and-fade-background linear both;
         position: absolute;
@@ -45,7 +46,7 @@ mat-toolbar {
     #logo {
         height: 100%;
         backdrop-filter: blur(2px); 
-        font-size: clamp(30px, 7vw, 50px);
+        font-size: clamp(30px, 7vw, 45px);
         text-decoration: none;
         -webkit-font-smoothing: auto;
         font-weight: bold;
@@ -57,10 +58,11 @@ mat-toolbar {
 
     &.scrolled-down {
         box-shadow: 0 5px 5px -3px rgba(0,0,0,.26);
-        line-height: 55px;
+        line-height: 40px;
+        background: var(--mat-toolbar-container-background-color, white);
 
         .header-bg {
-            opacity: 0.2;
+            opacity: 0;
         }
     }
 }
@@ -83,7 +85,6 @@ nav#top-nav {
         font-weight: 500;
         letter-spacing: 0.5px;
         padding:0 20px 0 20px;
-        -webkit-font-smoothing: initial;
         text-decoration: none;
         -webkit-font-smoothing: subpixel-antialiased;
         cursor: pointer;

@@ -8,8 +8,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 export const appRoutes = provideRouter(
     [
         { path: '', redirectTo: 'home', pathMatch: 'full' },
-        { path: 'home', component: HomeComponent },
-        { path: 'portfolio', component: PortfolioComponent },
+        { path: 'home', title: 'Home', component: HomeComponent },
+        { path: 'portfolio', title: 'Portfolio', component: PortfolioComponent },
         //{ path: 'about', component: AboutComponent },
         //{ path: 'services', component: ServicesComponent },
         //{ path: 'blog', component: BlogComponent }
