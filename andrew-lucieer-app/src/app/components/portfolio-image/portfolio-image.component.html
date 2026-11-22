@@ -1,2 +1,9 @@
-<img src="/images/{{filename}}" (click)="expandImage()"/>
-<!--<caption>{{description}}</caption>-->
+<figure class="case-figure">
+    <a [href]="fullSrc ?? src">
+        <img [src]="src" 
+             [alt]="alt"
+             [attr.width]="width" 
+             [attr.height]="height" />
+    </a>
+    <figcaption [innerHTML]="caption"></figcaption>
+</figure>

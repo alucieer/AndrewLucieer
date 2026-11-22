@@ -1,6 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { PortfolioImageDialogComponent } from '../portfolio-image-dialog/portfolio-image-dialog.component';
+import { Component, Input, numberAttribute } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio-image',
@@ -9,21 +7,10 @@ import { PortfolioImageDialogComponent } from '../portfolio-image-dialog/portfol
   styleUrl: './portfolio-image.component.scss'
 })
 export class PortfolioImageComponent {
-  @Input() filename: String;
-  @Input() title: String;
-  @Input() description: String;
-  readonly dialog = inject(MatDialog);
-
-  expandImage() {
-    this.dialog.open(PortfolioImageDialogComponent,
-      {
-        data: {
-          filename: this.filename,
-          title: this.title,
-          description: this.description
-        },
-        panelClass: 'portfolio-image-dialog'
-      }
-    );
-  }
+  @Input({ required: true }) src!: string;
+  @Input() fullSrc?: string;
+  @Input({ required: true }) alt!: string;
+  @Input() caption = '';
+  @Input({ transform: numberAttribute }) width?: number;
+  @Input({ transform: numberAttribute }) height?: number;
 }

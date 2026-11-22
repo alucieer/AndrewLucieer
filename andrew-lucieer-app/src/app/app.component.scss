@@ -18,8 +18,7 @@ mat-toolbar {
     position: fixed;
     z-index: 101;
     top:0;
-    width: 100vw;
-    min-width: 100vw;
+    width: 100%;
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
@@ -60,6 +59,11 @@ mat-toolbar {
         box-shadow: 0 5px 5px -3px rgba(0,0,0,.26);
         line-height: 40px;
         background: var(--mat-toolbar-container-background-color, white);
+
+        #logo {
+            mask-image:none;
+            backdrop-filter: unset;
+        }
 
         .header-bg {
             opacity: 0;
@@ -123,7 +127,7 @@ main {
     max-width: 1400px;
     margin: 85px auto 0 auto;
     min-height: calc(100vh - 132px);
-    padding: 60px 30px 30px 30px;
+    //padding: 60px 30px 30px 30px;
 }
 
 footer#social-media-links {

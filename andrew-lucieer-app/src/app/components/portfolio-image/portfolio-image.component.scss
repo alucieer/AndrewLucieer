@@ -4,8 +4,37 @@
     align-items: center;
 }
 
+a {
+    display: inline-block;
+}
+
 img {
-    max-width: 300px;
+    max-width: 100%;
+    height: auto;
+    display: block;
     cursor: pointer;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .11);
+}
+
+.case-figure {                                                                                                  
+    width: min(100%, 1120px);
+    margin: 0 auto;
+}
+
+code {
+
+}
+
+figcaption {
+  border-left: 2px solid var(--mat-sys-primary);
+  max-width: 960px;
+  margin: 1.3rem 0 0;
+  padding-left: 1.15rem;
+  font-size: 1.25rem;
+
+    p {
+        margin: 0;
+        font-size: .98rem;
+        line-height: 1.7;
+    }
 }

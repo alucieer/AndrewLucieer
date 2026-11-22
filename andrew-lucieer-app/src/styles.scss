@@ -5,6 +5,11 @@
 /** SNES Color Pallette 
 https://www.color-hex.com/color-palette/22515 **/
 
+:root {
+  font-size: 16px;
+  --color-primary: #4f43ae;
+}
+
 html {
   @include mat.theme((
     color: (
@@ -12,12 +17,13 @@ html {
       primary: mat.$azure-palette,
       tertiary: mat.$blue-palette,
     ),
-    typography: VT323,
+    typography: Roboto,
     density: 0,
     use-system-variables: true,
     system-variables-prefix: md-sys-color,
   ));
 }
+
 
 a {
   &:visited {
@@ -84,6 +90,86 @@ https://dribbble.com/shots/11199542-Neteor-Web-Designer-Portfolio-HTML5/attachme
 //Generated from #db2e3a using https://material-foundation.github.io/material-theme-builder/
 //https://www.youtube.com/watch?v=rLtF6MzTRA0&t=2s
 //https://stackoverflow.com/questions/62549139/it-is-possible-change-angular-material-mat-slide-toggle-icon
+
+code {
+  border-radius: 8px;
+  padding:5px;
+  font-family: courier;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+mat-card-content {
+  padding: 1.5rem !important;
+  font-size:1.25rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 0.25em;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.25em;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.25em;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25em;
+  margin-top: 0;
+}
+
+//Scanline effect
+/*h1, h2, h3, h4, mat-card-content {
+    mask-image: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.3333333333) 5%,
+                  #000 50%
+                );
+    mask-size: 100% 2px;
+}*/
+
+*[mat-dialog-title] {
+  padding-top: 0.5rem;
+  font-size: clamp(18px, 2.5rem, 26px);
+}
+
+html, body { height: 100%; }
+body { 
+  margin: 0;
+  font-family: Roboto, monospace;
+  font-size: 24px;
+  background: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
+
+  mat-toolbar a {
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3333333333) 5%,
+      #000 50%
+    );
+    mask-size: 100% 2px;
+  }
+
+
+}
+
 body.light-mode {
   --background: rgb(237, 237, 237);
 
@@ -150,7 +236,12 @@ body.light-mode {
       opacity: 0.6;
     }
   }
+
+  code {
+    background: #dedede;
+  }
 }
+//End Light Mode
 
 body.dark-mode {
   --background: #1f2027;
@@ -232,68 +323,10 @@ body.dark-mode {
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px #4f43ae;
   }
-}
 
-html, body { height: 100%; }
-body { 
-  margin: 0;
-  font-family: "VT323", monospace;
-  font-size: 24px;
-  background: var(--mat-sys-background);
-  color: var(--mat-sys-on-background);
-
-  mat-toolbar a {
-    mask-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3333333333) 5%,
-      #000 50%
-    );
-    mask-size: 100% 2px;
+  code {
+    background: #a8a8a8;
+    color: black;
   }
 }
-
-//Scanline effect
-h1, h2, h3, h4, mat-card-content {
-    mask-image: linear-gradient(
-                  to bottom,
-                  rgba(0, 0, 0, 0.3333333333) 5%,
-                  #000 50%
-                );
-    mask-size: 100% 2px;
-}
-
-mat-card-content {
-  padding: 30px !important;
-}
-
-h1 {
-  font-size: 2.2rem;
-  font-weight: 500;
-  margin-bottom: 0.25em;
-  margin-top: 0;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 0.25em;
-  margin-top: 0;
-}
-
-h3 {
-  font-size: 1.75rem;
-  margin-bottom: 0.25em;
-  margin-top: 0;
-  font-weight: bold;
-}
-
-h4 {
-  font-size: 1.25rem;
-  margin-bottom: 0.25em;
-  margin-top: 0;
-}
-
-*[mat-dialog-title] {
-  padding-top: 0.5rem;
-  font-size: clamp(18px, 2.5rem, 26px);
-}
+//End Dark Mode

@@ -13,8 +13,10 @@
       <!--<a routerLink="/services" routerLinkActive="active" ariaCurrentWhenActive="page">Services</a>-->
       <a mat-button routerLink="/portfolio" routerLinkActive="active" ariaCurrentWhenActive="page">Portfolio</a>
       <!--<a routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page">Blog</a>-->
-      <a mat-button (click)="openContactDialog()">Contact</a>
+      <a mat-button href="mailto:alucieer@gmail.com">Get in touch</a>
     </nav>
+
+    <app-theme-mode-toggle></app-theme-mode-toggle>
 
     <!-- Mobile Nav Menu -->
     <button mat-icon-button *ngIf="appSvc.isSmallScreen"
@@ -37,11 +39,10 @@
       <!--<a mat-menu-item routerLink="/blog" routerLinkActive="active" ariaCurrentWhenActive="page">
         Blog
       </a>-->
-      <a mat-menu-item (click)="openContactDialog()" ariaCurrentWhenActive="page">
-        Contact
+      <a mat-menu-item href="mailto:alucieer@gmail.com" ariaCurrentWhenActive="page">
+        Get in touch
       </a>
     </mat-menu>
-    <app-theme-mode-toggle></app-theme-mode-toggle>
   </span>
 </mat-toolbar>
 

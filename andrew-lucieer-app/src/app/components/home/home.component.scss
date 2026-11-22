@@ -21,6 +21,16 @@
     background-size: 100% 80%;
 }
 
+//Scanline effect
+h1, h2, h3, h4, mat-card-content {
+    mask-image: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.3333333333) 5%,
+                  #000 50%
+                );
+    mask-size: 100% 2px;
+}
+
 #quote-container {
     display: flex;
     flex-direction: column;
@@ -64,7 +74,7 @@ mat-card-content {
 
 }
 
-h1 {
+h2 {
     margin-left: 10px;
 }
 
