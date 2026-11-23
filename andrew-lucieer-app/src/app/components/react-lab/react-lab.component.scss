@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  --lab-surface: var(--mat-sys-surface);
+  --lab-text: var(--mat-sys-on-surface);
+  --lab-panel: var(--mat-sys-surface-container-high);
+  --lab-accent: var(--mat-sys-primary);
+  --lab-on-accent: var(--mat-sys-on-primary);
+  --lab-outline: var(--mat-sys-outline);
+}

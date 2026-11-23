@@ -1,0 +1,5 @@
+:host { display: block; min-width: 0; }
+figure { margin: 0; }
+a { display: inline-block; max-width: 100%; border-radius: .75rem; }
+img { display: block; max-width: 100%; height: auto; border-radius: .75rem; border: 1px solid var(--mat-sys-outline-variant); }
+figcaption { border-inline-start: 2px solid var(--mat-sys-primary); margin-block-start: .85rem; padding-inline-start: .8rem; color: var(--mat-sys-on-surface-variant); }

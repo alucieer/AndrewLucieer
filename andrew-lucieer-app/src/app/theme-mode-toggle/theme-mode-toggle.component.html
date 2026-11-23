@@ -1,0 +1,6 @@
+<mat-slide-toggle 
+    #darkModeSwitch 
+    [checked]="themeModeService.themeModeSignal() === 'dark'"
+    (change)="toggleTheme()">
+    <span class="cdk-visually-hidden">{{ themeModeService.themeModeSignal() === 'dark' ? 'Enable light mode' : 'Enable dark mode' }}</span>
+</mat-slide-toggle>

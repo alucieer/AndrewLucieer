@@ -1,0 +1,43 @@
+<a class="skip-link" href="#main" (click)="skipToContent($event)">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner shell">
+    <a class="brand" id="site-start" routerLink="/home">
+      <img src="images/drew.jpg" width="44" height="44" alt="">
+      <span>Andrew Lucieer</span>
+    </a>
+    <nav aria-label="Primary">
+      <a routerLink="/home" fragment="work">Work</a>
+      <a routerLink="/home" fragment="lab">Lab</a>
+      <a routerLink="/home" fragment="about">About</a>
+    </nav>
+    <mat-select class="theme-control" aria-label="Theme mode"
+        [value]="theme()" (selectionChange)="setTheme($event.value)"
+        matTooltip="Change theme mode" matTooltipPosition="below"
+        [matTooltipShowDelay]="400" matTooltipTouchGestures="off">
+      <mat-select-trigger>
+        <span class="theme-value">
+          <span class="material-symbols-outlined theme-icon" aria-hidden="true">{{ modes[theme()].icon }}</span>
+          {{ modes[theme()].label }}
+        </span>
+      </mat-select-trigger>
+      <mat-option value="system">System</mat-option>
+      <mat-option value="light">Light</mat-option>
+      <mat-option value="dark">Dark</mat-option>
+    </mat-select>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+  <router-outlet />
+</main>
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <span>Andrew Lucieer</span>
+    <a href="mailto:alucieer+portfolio@gmail.com?subject=Portfolio%20feedback">Email</a>
+    <a href="https://www.linkedin.com/in/andrew-lucieer-7b323646/">LinkedIn</a>
+    <a href="https://github.com/alucieer">GitHub</a>
+    <button mat-stroked-button type="button" (click)="scrollToTop()">
+      <span class="material-symbols-outlined top-icon" aria-hidden="true">arrow_upward</span>
+      Back to top
+    </button>
+  </div>
+</footer>
