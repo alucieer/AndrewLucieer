@@ -1,78 +1,44 @@
-
-<section class="">
-    <img id="avatar" src="/images/drew.png" alt="headshot of Andrew Lucieer">
-    <aside id="quote-container">
-        <div>
-            <span class="quote-symbol">&ldquo;</span>
-            <span id="random-quote">{{randomQuote.quote}}</span>
-            <span class="quote-symbol">&rdquo;</span> 
-        </div>
-        <div id="author">- {{randomQuote.author}}</div>
-    </aside>
+<section class="hero shell" aria-labelledby="intro">
+  <div>
+    <p class="eyebrow">Staff Design Technologist · UX Engineering</p>
+    <h1 id="intro">Design systems teams can <em>ship with.</em></h1>
+    <p class="intro">I’m Andrew. I build accessible interfaces, the component systems behind them, and AI workflows that turn design intent into code teams can review.</p>
+    <div class="actions">
+      <a mat-flat-button routerLink="/home" fragment="generator-title">Explore the generator</a>
+      <a mat-stroked-button routerLink="/home" fragment="lab">Try the accessibility lab</a>
+    </div>
+  </div>
+  <figure class="hero-preview">
+    <div class="preview-label"><span>From Figma to Angular</span><span class="preview-tag">Claude Code</span></div>
+    <img src="images/portfolio/generator-before-after.jpeg" width="980" height="406" alt="The implemented Angular billing dialog beside its Figma mockup for comparison." fetchpriority="high">
+    <figcaption>One component system, with decisions surfaced for human review.</figcaption>
+  </figure>
 </section>
-
-<section id="home-body">
-    <h2>About Me</h2>
-
-    <mat-card id="about-me-card" appearance="outlined">
-        <mat-card-content>
-            I'm a design techonologist with over 20 years of experience working with UI/UX for web applications.  I bridge the gap between design and engineering, improving user experience by using the laws of UX, design guidelines and building proof of concept prototypes. I have a passion for cutting edge technologies and am endlessly curious.  I also have background in full-stack web development.
-           
-            <br><br>
-
-            In addition to my computer experience, I have a background in photography, writing and hiking.
-        </mat-card-content>
-    </mat-card>
-
-    <br><br>
-
-    <h2>Skills + Responsibilities</h2>
-    <mat-card id='skills-responsibilities-card' appearance="outlined">
-        <mat-card-content>
-            <section>
-                <span>
-                    <h2>Analytical Skills</h2>
-                    <ul class="analytical">
-                        <li>Angular 19</li>
-                        <li>TypeScript / JavaScript</li>
-                        <li>Jasmine Unit Tests</li>
-                        <li>Java</li>
-                        <li>PHP</li>
-                    </ul>
-                </span>
-                <span>
-                    <h2>Creative Skills</h2>
-                    <ul class="creative">
-                        <li>SCSS/CSS</li>
-                        <li>Material Design</li>
-                        <li>Figma</li>
-                        <li>Adobe Suite</li>
-                        <li>Bootstrap</li>
-                    </ul>
-                </span>
-            </section>
-
-            <br>
-
-            <section>
-                <span>
-                    <h3>Analytical Responsibilities</h3>
-                    <ul class="analytical">
-                        <li>Optimizing front-end code to improve performance</li>
-                        <li>Build applications that document how to implement front-end web components, driving re-use and UI consistancy</li>
-                        <li>Upgrade and fix front-end code to be functionally compatible with the latest technologies</li>
-                        <li>Writing POC code that proves design ideas are technically feasable</li>
-                    </ul>
-                </span>
-                <span>
-                    <h3>Creative Responsibilities</h3>
-                    <ul class="creative">
-                        <li>Create mockups to guide front-end engineers during implementation</li>
-                        <li>Identify and solve high value UI and UX issues using the laws of UX and design guidelines</li>
-                        <li>Attend design reviews to hear stakeholder feedback for new designs</li>
-                    </ul>
-                </span>
-            </section>
-        </mat-card-content>
-    </mat-card>
+<dl class="proof shell" aria-label="Project scope">
+  <div><dt>Enterprise applications</dt><dd>5</dd></div>
+  <div><dt>Component types in the library</dt><dd>36</dd></div>
+  <div><dt>Teams using the accessibility tool</dt><dd>4</dd></div>
+</dl>
+<div class="shell"><app-portfolio /></div>
+<section class="lab-section shell" id="lab" tabindex="-1" aria-labelledby="lab-title">
+  <p class="eyebrow">Interactive demo · React</p>
+  <h2 id="lab-title">Accessibility lab</h2>
+  <p class="section-intro">Try the same preference panel with larger text or stronger contrast. The demo shares the site’s Material color tokens and keeps its preview settings local.</p>
+  @defer (on viewport) {
+    <app-react-lab />
+  } @placeholder {
+    <p>Preference panel</p>
+  }
+</section>
+<section class="about-section shell" id="about" tabindex="-1" aria-labelledby="about-title">
+  <div>
+    <p class="eyebrow">About me</p>
+    <h2 id="about-title">I like figuring out how things work.</h2>
+    <p>I’ve spent 20 years building software, with the last 11 across frontend engineering, UX, and design systems. At Magnit I build shared tools, lead accessibility work, and mentor engineers through code reviews on new component variants.</p>
+    <p>Away from work, I’m into games, photography, writing, and hiking. Scotland is where two of those interests meet. I’m also learning Unreal Engine by building a game, which gives me a whole new set of interface problems to think about.</p>
+    <a href="mailto:alucieer+portfolio@gmail.com?subject=Portfolio%20feedback">Get in touch</a>
+  </div>
+  <figure class="about-portrait">
+    <img src="images/drew.jpg" width="280" height="280" loading="lazy" alt="Portrait of Andrew Lucieer">
+  </figure>
 </section>

@@ -1,18 +1,16 @@
-import { provideRouter, withHashLocation } from '@angular/router';
-import { AboutComponent } from './components/about/about.component';
+import { provideRouter, withHashLocation, withInMemoryScrolling } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { ServicesComponent } from './components/services/services.component';
-import { BlogComponent } from './components/blog/blog.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 export const appRoutes = provideRouter(
-    [
-        { path: '', redirectTo: 'home', pathMatch: 'full' },
-        { path: 'home', title: 'Home', component: HomeComponent },
-        { path: 'portfolio', title: 'Portfolio', component: PortfolioComponent },
-        //{ path: 'about', component: AboutComponent },
-        //{ path: 'services', component: ServicesComponent },
-        //{ path: 'blog', component: BlogComponent }
-    ],
-    withHashLocation()
+  [
+    { path: '', pathMatch: 'full', redirectTo: 'home' },
+    { path: 'home', title: 'Design Systems & UX Engineering', component: HomeComponent },
+    { path: 'portfolio', pathMatch: 'full', redirectTo: '/home#work' },
+    { path: 'work', pathMatch: 'full', redirectTo: '/home#work' },
+    { path: 'lab', pathMatch: 'full', redirectTo: '/home#lab' },
+    { path: 'about', pathMatch: 'full', redirectTo: '/home#about' },
+    { path: '**', redirectTo: 'home' },
+  ],
+  withHashLocation(),
+  withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' }),
 );
