@@ -1,0 +1,19 @@
+<mat-select id="theme-control"
+    panelClass="theme-dropdown-panel"
+    aria-label="Theme mode"
+    [value]="theme()"
+    (selectionChange)="setTheme($event.value)"
+    matTooltip="Change theme mode"
+    matTooltipPosition="below"
+    [matTooltipShowDelay]="400"
+    matTooltipTouchGestures="off">
+  <mat-select-trigger>
+    <span class="theme-value">
+      <mat-icon aria-hidden="true">{{ modes[theme()].icon }}</mat-icon>
+      <span class="theme-label">{{ modes[theme()].label }}</span>
+    </span>
+  </mat-select-trigger>
+  <mat-option value="system">System</mat-option>
+  <mat-option value="light">Light</mat-option>
+  <mat-option value="dark">Dark</mat-option>
+</mat-select>

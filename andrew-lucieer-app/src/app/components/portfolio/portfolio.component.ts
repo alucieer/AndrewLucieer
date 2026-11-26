@@ -5,7 +5,11 @@ import { PortfolioImageComponent } from '../portfolio-image/portfolio-image.comp
 
 @Component({
   selector: 'app-portfolio',
-  imports: [PortfolioImageComponent, MatCardModule, MatDividerModule],
+  imports: [
+    MatCardModule, 
+    MatDividerModule,
+    PortfolioImageComponent
+  ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
