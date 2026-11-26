@@ -1,0 +1,59 @@
+#theme-control {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  width: auto;
+  min-height: 2.75rem;
+  border: 1px solid var(--mat-sys-outline);
+  border-radius: 100px;
+  padding-inline: .65rem;
+  background: var(--mat-sys-surface);
+  cursor: pointer;
+
+  &:hover, &[aria-expanded='true'] {
+    background: var(--mat-sys-surface-container-high);
+  }
+
+  .theme-value {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    margin-inline-end: .6rem;
+    min-inline-size: 4.6rem;
+    position: relative;
+    top: 3px;
+  }
+
+  .theme-icon {
+    font-size: 1.2rem;
+    color: var(--mat-sys-primary);
+  }
+}
+
+::ng-deep .theme-dropdown-panel {
+  min-width: 200px;
+  position: relative;
+  right: 151px;
+  top: 9px;
+}
+
+@media (max-width: 600px) {
+  #theme-control {
+    width: 60px;
+  }
+
+  .theme-label {
+    display: none;
+  }
+}
+
+@media (max-width: 26rem) {
+  #theme-control {
+    padding-inline: .5rem;
+
+    .theme-value {
+      margin-inline-end: .25rem;
+      min-inline-size: 4.2rem;
+    }
+  }
+}
