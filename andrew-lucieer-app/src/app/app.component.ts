@@ -1,5 +1,5 @@
 import { DOCUMENT, ViewportScroller } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, afterNextRender, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -28,19 +28,21 @@ export class AppComponent {
   constructor(private iconRegistry: MatIconRegistry) {
     this.iconRegistry.setDefaultFontSetClass('material-symbols-outlined');
 
-    this.scroller.setOffset(() => {
-      const header = this.document.querySelector<HTMLElement>('.site-header');
-      const sticky = header && this.document.defaultView?.getComputedStyle(header).position === 'sticky';
-      return [0, (sticky ? header.offsetHeight : 0) + 12];
+    afterNextRender(() => {
+      this.scroller.setOffset(() => {
+        const header = this.document.querySelector<HTMLElement>('.site-header');
+        const sticky = header && this.document.defaultView?.getComputedStyle(header).position === 'sticky';
+        return [0, (sticky ? header.offsetHeight : 0) + 12];
+      });
     });
   }
 
   protected scrollToTop(): void {
     this.document.getElementById('site-start')?.focus({ preventScroll: true });
-    if (this.router.url === '/home') {
+    if (this.router.url === '/' || this.router.url.startsWith('/#')) {
       this.scroller.scrollToPosition([0, 0]);
     } else {
-      void this.router.navigate(['/home']);
+      void this.router.navigate(['/']);
     }
   }
 

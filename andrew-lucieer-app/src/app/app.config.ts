@@ -1,11 +1,10 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { appRoutes } from './app.routes';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     appRoutes,
-    provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideAnimationsAsync()
-  ]
+    provideZoneChangeDetection({ eventCoalescing: true }), provideClientHydration(),
+  ],
 };

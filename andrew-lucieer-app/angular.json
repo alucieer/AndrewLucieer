@@ -25,7 +25,11 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "allowedCommonJsDependencies": ["react", "react-dom/client", "react/jsx-runtime"],
+            "allowedCommonJsDependencies": [
+              "react",
+              "react-dom/client",
+              "react/jsx-runtime"
+            ],
             "assets": [
               {
                 "glob": "**/*",
@@ -35,7 +39,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "outputMode": "static",
+            "security": {
+              "allowedHosts": []
+            }
           },
           "configurations": {
             "production": {
