@@ -45,11 +45,6 @@ nav {
     font-weight: 650;
     border-radius: 100px;
 
-    &#resume-download-lnk {
-      display: flex;
-      gap: 7px;
-    }
-
     &:hover {
       background: var(--mat-sys-surface-container);
     }

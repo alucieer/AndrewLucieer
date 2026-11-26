@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
 @use './app/styles/theme-colors' as portfolio;
+@use '@angular/cdk';
+@include cdk.a11y-visually-hidden();
 
 html {
   color-scheme: light dark;
